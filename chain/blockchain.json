@@ -3,11 +3,86 @@
     "index": 0,
     "timestamp": 1726000000.0,
     "evidence_record": {
-      "title": "FaceID Genesis Block",
-      "protocol": "FaceID Biometric Provenance Ledger v2.0",
+      "title": "face-chain Genesis Block",
+      "protocol": "Biometric Provenance Ledger v1.0",
       "status": "INITIALIZED"
     },
     "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
-    "hash": "98d36e53eb8f13597d654c6340bc12ef2ac19e90197ef470daa44d5a8ee110bc"
+    "hash": "b6e30c46873474b7a1a22e0bb103f85934f45a42439658668a434850b11e4b8d"
+  },
+  {
+    "index": 1,
+    "timestamp": 1788759384.1386418,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "face-chain forensic evidence",
+      "created_at": "2026-09-07T05:36:24.122840+00:00",
+      "source_image": {
+        "filename": "sample.jpg",
+        "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d",
+        "phash": "e959968619697996"
+      },
+      "image": {
+        "filename": "sample.jpg",
+        "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d",
+        "phash": "e959968619697996"
+      },
+      "biometrics": {
+        "detected": false,
+        "face_count": 0,
+        "embedding_model": "ArcFace 512-d (buffalo_l)",
+        "embedding_persistent": false,
+        "det_score": 0.0,
+        "face_boxes": [],
+        "landmarks": []
+      },
+      "face": {
+        "detected": false,
+        "count": 0,
+        "embedding_generated": false,
+        "det_score": 0.0,
+        "face_boxes": [],
+        "landmarks": []
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 10,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 10,
+        "error": null
+      },
+      "best_match": {
+        "title": "koyin - YouTube",
+        "source": "YouTube",
+        "link": "https://www.youtube.com/@koyin64",
+        "platform": "YouTube",
+        "is_specific_post": false,
+        "post_type": "Generic Portal / Aggregator",
+        "cosine_similarity": null,
+        "visual_similarity": 0.4856,
+        "phash_distance": 18,
+        "verified": false
+      },
+      "deepfake_analysis": {
+        "label": "Authentic / Real",
+        "risk_score": 0.05,
+        "confidence": 0.9,
+        "is_synthetic": false,
+        "model": "Spatial-FFT-Heuristic (Offline Fallback)",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "NO_CONFIRMED_MATCH",
+        "best_similarity": 0.4856,
+        "threshold": 0.9,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "83ffb62af2a30b5fd64e05faa2d8238fac69114337f3ba310f5d22144f44db39"
+    },
+    "previous_hash": "b6e30c46873474b7a1a22e0bb103f85934f45a42439658668a434850b11e4b8d",
+    "hash": "bec3f2ef599e25fa6c5193504341c01e1b833a21b40174186339b539337a80d2"
   }
 ]
