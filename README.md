@@ -307,7 +307,7 @@ You can run `FaceID` as a high-performance REST microservice and interactive web
 ```bash
 python app.py --serve --port 8000
 ```
-Then navigate to `http://localhost:8000` to access the **FaceID Biometric Provenance Terminal**.
+Then navigate to `http://localhost:8000` to access the **FaceID Web Interface**.
 
 ### REST Endpoints
 

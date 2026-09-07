@@ -57,7 +57,7 @@ def main():
     args = parser.parse_args()
 
     if args.serve:
-        print(f"Starting FaceID Biometric Provenance Terminal on http://{args.host}:{args.port}...")
+        print(f"Starting FaceID on http://{args.host}:{args.port}...")
         run_server(port=args.port, host=args.host)
         return
 
