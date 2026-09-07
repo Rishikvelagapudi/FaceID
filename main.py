@@ -3,11 +3,11 @@ import json
 import sys
 from pathlib import Path
 
-from app.pipeline import FaceProofPipeline
+from app.pipeline import FaceIDPipeline
 
 def main():
     parser = argparse.ArgumentParser(
-        description="FaceProof - image provenance verification pipeline"
+        description="FaceID - image provenance and biometric verification pipeline"
     )
     parser.add_argument("--image", required=True, help="Path to input image")
     parser.add_argument("--no-blockchain", action="store_true",
@@ -20,7 +20,7 @@ def main():
         print(f"ERROR: Image not found: {image_path}")
         sys.exit(1)
 
-    pipeline = FaceProofPipeline()
+    pipeline = FaceIDPipeline()
     try:
         result = pipeline.run(
             image_path,
@@ -32,7 +32,7 @@ def main():
         sys.exit(1)
 
     print("\n" + "=" * 64)
-    print("FACEPROOF VERIFICATION COMPLETE")
+    print("FACEID VERIFICATION COMPLETE")
     print("=" * 64)
     print(f"Status             : {result['verification']['status']}")
     print(f"Face detected      : {result['face']['detected']}")

@@ -154,7 +154,7 @@ class TestnetAnchor:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="face-chain Layer 2 Sepolia Testnet Anchoring & Verification CLI"
+        description="FaceID Layer 2 Sepolia Testnet Anchoring & Verification CLI"
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -175,7 +175,7 @@ def main():
     if args.command == "verify":
         res = anchor_service.verify(args.tx_hash, args.expected_hash)
         print("=" * 64)
-        print("FACE-CHAIN INDEPENDENT BLOCKCHAIN AUDIT")
+        print("FACEID INDEPENDENT BLOCKCHAIN AUDIT")
         print("=" * 64)
         print(f"TX Hash       : {res['tx_hash']}")
         print(f"On-chain hash : {res['on_chain_hash']}")

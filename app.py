@@ -7,9 +7,9 @@ def run_server(port: int = 8000, host: str = "127.0.0.1"):
     uvicorn.run("app.server:app", host=host, port=port, reload=False)
 
 def run_pipeline(image_path: Path, write_blockchain: bool = True, max_results: int = None, threshold: float = None):
-    from app.pipeline import FaceProofPipeline
+    from app.pipeline import FaceIDPipeline
 
-    pipeline = FaceProofPipeline()
+    pipeline = FaceIDPipeline()
     if threshold is not None:
         pipeline.similarity_threshold = threshold
 
@@ -20,7 +20,7 @@ def run_pipeline(image_path: Path, write_blockchain: bool = True, max_results: i
     )
 
     print("\n" + "=" * 64)
-    print("FACE-CHAIN FORENSIC VERIFICATION COMPLETE")
+    print("FACEID FORENSIC VERIFICATION COMPLETE")
     print("=" * 64)
     print(f"Status             : {result['verification']['status']}")
     print(f"Face detected      : {result['face']['detected']}")
@@ -44,7 +44,7 @@ def run_pipeline(image_path: Path, write_blockchain: bool = True, max_results: i
 
 def main():
     parser = argparse.ArgumentParser(
-        description="face-chain — Biometric Provenance & OSINT Forensic Pipeline"
+        description="FaceID — Biometric Provenance & OSINT Forensic Pipeline"
     )
     parser.add_argument("--image", type=str, default=None, help="Path to input face image")
     parser.add_argument("--serve", action="store_true", help="Launch interactive Web UI & REST API")
@@ -57,7 +57,7 @@ def main():
     args = parser.parse_args()
 
     if args.serve:
-        print(f"Starting face-chain Biometric Provenance Terminal on http://{args.host}:{args.port}...")
+        print(f"Starting FaceID Biometric Provenance Terminal on http://{args.host}:{args.port}...")
         run_server(port=args.port, host=args.host)
         return
 

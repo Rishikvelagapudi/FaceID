@@ -25,9 +25,9 @@ logger = logging.getLogger(__name__)
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
-class FaceProofPipeline:
+class FaceIDPipeline:
     """
-    face-chain end-to-end investigative forensic pipeline:
+    FaceID end-to-end investigative forensic pipeline:
     Biometrics -> OSINT Visual Search -> ArcFace Cosine Re-verification ->
     Social Post Isolation -> ViT Deepfake Signal -> Deterministic Hashing ->
     Dual-Layer Blockchain Anchoring (Local & Ethereum Sepolia).
@@ -187,7 +187,7 @@ class FaceProofPipeline:
         created_at = datetime.now(timezone.utc).isoformat()
         evidence_record = {
             "schema_version": "2.0",
-            "protocol": "face-chain forensic evidence",
+            "protocol": "FaceID forensic evidence",
             "created_at": created_at,
             "source_image": {
                 "filename": image_path.name,
@@ -321,3 +321,6 @@ class FaceProofPipeline:
         evidence_record["report_path"] = str(report_path)
 
         return evidence_record
+
+# Backward compatibility alias
+FaceProofPipeline = FaceIDPipeline

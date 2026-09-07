@@ -49,8 +49,8 @@ class LocalBlockchain:
         timestamp = 1726000000.0
         prev_hash = "0" * 64
         record = {
-            "title": "face-chain Genesis Block",
-            "protocol": "Biometric Provenance Ledger v1.0",
+            "title": "FaceID Genesis Block",
+            "protocol": "FaceID Biometric Provenance Ledger v2.0",
             "status": "INITIALIZED",
         }
         b_hash = compute_block_hash(0, timestamp, prev_hash, record)

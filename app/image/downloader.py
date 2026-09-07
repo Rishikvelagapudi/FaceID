@@ -7,7 +7,7 @@ TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "20"))
 
 def download_image(url: str) -> Image.Image:
     headers = {
-        "User-Agent": "Mozilla/5.0 FaceProof/1.0"
+        "User-Agent": "Mozilla/5.0 FaceID/2.0"
     }
     response = requests.get(
         url,

@@ -1,4 +1,4 @@
-// FaceProof Retro Terminal Application Controller
+// FaceID Retro Terminal Application Controller
 
 document.addEventListener('DOMContentLoaded', () => {
     // UI Element References

@@ -1,4 +1,4 @@
-# 🛡️ face-chain
+# 🛡️ FaceID
 
 > **End-to-End Biometric Provenance, OSINT Social Attribution & Dual-Layer Blockchain Forensic Pipeline**
 
@@ -13,9 +13,9 @@
 
 ## 📋 Executive Summary
 
-**`face-chain`** is an end-to-end investigative pipeline engineered to address **digital identity verification**, **OSINT visual attribution**, and **tamper-evident evidence preservation**.
+**`FaceID`** is an end-to-end investigative pipeline engineered to address **digital identity verification**, **OSINT visual attribution**, and **tamper-evident evidence preservation**.
 
-In an era of ubiquitous synthetic media and digital impersonation, establishing the genuine provenance and first-seen context of a face image requires more than simple reverse-search rankings. `face-chain` bridges biometric computer vision, live web-scale OSINT, deepfake classification, and immutable distributed ledgers into an automated forensic workflow.
+In an era of ubiquitous synthetic media and digital impersonation, establishing the genuine provenance and first-seen context of a face image requires more than simple reverse-search rankings. `FaceID` bridges biometric computer vision, live web-scale OSINT, deepfake classification, and immutable distributed ledgers into an automated forensic workflow.
 
 Given an arbitrary portrait or facial scan, the system:
 1. **Detects the face** and computes an invariant **512-dimensional facial embedding** using **InsightFace (ArcFace)**.
@@ -111,7 +111,7 @@ flowchart TD
 
 ## ⛓️ Which Blockchain We Used (And Why)
 
-To satisfy forensic standards with production-grade rigor, `face-chain` implements a **hybrid dual-layer blockchain strategy**:
+To satisfy forensic standards with production-grade rigor, `FaceID` implements a **hybrid dual-layer blockchain strategy**:
 
 ### 1. Public Blockchain: Ethereum Sepolia Testnet (EVM)
 
@@ -177,8 +177,8 @@ The SHA-256 evidence fingerprint is embedded directly into the **input data (`ca
 
 Clone the repository:
 ```bash
-git clone https://github.com/aaryamanmishra/face-chain.git
-cd face-chain
+git clone https://github.com/Rishikvelagapudi/FaceID.git
+cd FaceID
 ```
 
 Create and activate a virtual environment:
@@ -302,12 +302,12 @@ Result        : MATCH ✓
 
 ## 🌐 Running the REST API & Web Mode
 
-You can run `face-chain` as a high-performance REST microservice and interactive web application:
+You can run `FaceID` as a high-performance REST microservice and interactive web application:
 
 ```bash
 python app.py --serve --port 8000
 ```
-Then navigate to `http://localhost:8000` to access the **Biometric Provenance Terminal**.
+Then navigate to `http://localhost:8000` to access the **FaceID Biometric Provenance Terminal**.
 
 ### REST Endpoints
 
@@ -358,8 +358,8 @@ In compliance with forensic and security rigor, here are documented boundaries a
 The repository is modularly architected to decouple computer vision, OSINT retrieval, deepfake heuristics, and distributed ledger anchoring:
 
 ```text
-face-chain/
-├── app.py                      # Main entrypoint: CLI runner, pipeline coordinator & REST API server
+FaceID/
+├── app.py                      # Primary entrypoint: CLI runner, coordinator & REST API server
 ├── main.py                     # Standalone CLI execution wrapper
 ├── check.py                    # Independent blockchain verification script (Sepolia RPC -> Local)
 ├── requirements.txt            # Production Python dependencies
@@ -389,6 +389,7 @@ face-chain/
 │   │   ├── bing_provider.py    # Fallback Bing Visual Search provider
 │   │   ├── tineye_provider.py  # TinEye Reverse Search provider
 │   │   ├── free_scraper_provider.py # Headless / direct visual scraper fallback
+│   │   ├── social_filter.py    # Social URL isolation (/reel/, /status/) & trust annotator
 │   │   └── factory.py          # Provider factory with fallback chaining
 │   │
 │   ├── deepfake/               # Synthetic Media Analysis Layer
@@ -403,14 +404,14 @@ face-chain/
 │   │   └── abi.json            # Smart contract ABI (for optional registry contracts)
 │   │
 │   └── static/                 # Forensic Web Terminal Assets
-│       ├── index.html          # Biometric terminal web dashboard
+│       ├── index.html          # FaceID biometric terminal web dashboard
 │       ├── styles.css          # Terminal UI stylesheet
 │       └── app.js              # Client-side webcam capture & async verification handling
 │
 ├── chain/                      # Layer 1 Blockchain Storage
 │   └── blockchain.json         # Cryptographic local block records and hash chain
 │
-├── contracts/                  # Optional Smart Contracts
+├── contracts/                  # Smart Contracts
 │   └── ProvenanceRegistry.sol  # Solidity smart contract for on-chain identity anchor registry
 │
 ├── data/                       # Local Working Directories
@@ -427,9 +428,9 @@ face-chain/
 │   └── create_sample.py        # Generate deterministic synthetic test faces
 │
 └── tests/                      # Automated Test Suite
+    ├── test_blockchain.py      # Unit tests for block integrity & cryptographic chaining
     ├── test_hashing.py         # Unit tests for cryptographic & perceptual hashing
-    ├── test_similarity.py      # Unit tests for 512-D cosine similarity matching
-    └── test_blockchain.py      # Unit tests for block integrity & cryptographic chaining
+    └── test_similarity.py      # Unit tests for 512-D cosine similarity matching
 ```
 
 ---

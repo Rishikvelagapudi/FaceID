@@ -33,7 +33,7 @@ def main():
         etherscan_url = None
 
     print("=" * 64)
-    print("FACE-CHAIN FORENSIC INTEGRITY AUDIT")
+    print("FACEID FORENSIC INTEGRITY AUDIT")
     print("=" * 64)
     print(f"Record Source : {result_path}")
     print(f"TX Hash       : {tx_hash or '0x866a0e6987418ccb7cd9fb013694487e4dc3e7cd8dac70c68b91116bbdff42ac'}")

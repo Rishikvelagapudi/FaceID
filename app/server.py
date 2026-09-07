@@ -10,12 +10,12 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, JSONResponse
 from pydantic import BaseModel
 
-from app.pipeline import FaceProofPipeline
+from app.pipeline import FaceIDPipeline
 from blockchain.blockchain import LocalBlockchain
 
 app = FastAPI(
-    title="face-chain API",
-    description="Biometric Provenance, OSINT Social Attribution & Dual-Layer Blockchain Forensic API",
+    title="FaceID API",
+    description="FaceID: Biometric Provenance, OSINT Social Attribution & Dual-Layer Blockchain Forensic API",
     version="2.0.0",
 )
 
@@ -28,7 +28,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-pipeline = FaceProofPipeline()
+pipeline = FaceIDPipeline()
 local_chain = LocalBlockchain()
 
 UPLOAD_DIR = Path("data/input")
@@ -46,7 +46,7 @@ def health_check():
     valid, err = local_chain.is_valid_chain()
     return {
         "status": "online",
-        "service": "face-chain Forensic API",
+        "service": "FaceID Forensic API",
         "version": "2.0.0",
         "blockchain_layer1": {
             "valid": valid,
@@ -160,4 +160,4 @@ def serve_index():
     index_file = static_dir / "index.html"
     if index_file.exists():
         return FileResponse(str(index_file))
-    return {"message": "face-chain Forensic API is running. Web UI not found."}
+    return {"message": "FaceID Forensic API is running. Web UI not found."}
