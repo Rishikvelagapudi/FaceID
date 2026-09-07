@@ -1381,5 +1381,80 @@
     },
     "previous_hash": "ac012e7f1e6c3fe32f37621d492d30106d321b7fd44680b41c5fbb00037bbb65",
     "hash": "2811693115f654795b8edbe36cbdd57e20dd75c4e30fb679adade8062a4e3373"
+  },
+  {
+    "index": 13,
+    "timestamp": 1788774588.1296272,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T09:49:48.127567+00:00",
+      "source_image": {
+        "filename": "upload_01bb6fac.jpg",
+        "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d",
+        "phash": "e959968619697996"
+      },
+      "image": {
+        "filename": "upload_01bb6fac.jpg",
+        "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d",
+        "phash": "e959968619697996"
+      },
+      "biometrics": {
+        "detected": false,
+        "face_count": 0,
+        "embedding_model": "ArcFace 512-d (buffalo_s)",
+        "embedding_persistent": false,
+        "det_score": 0.0,
+        "face_boxes": [],
+        "landmarks": []
+      },
+      "face": {
+        "detected": false,
+        "count": 0,
+        "embedding_generated": false,
+        "det_score": 0.0,
+        "face_boxes": [],
+        "landmarks": []
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 10,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 10,
+        "error": null
+      },
+      "best_match": {
+        "title": "MANGORO - YouTube",
+        "source": "YouTube",
+        "link": "https://www.youtube.com/@mangoro_official",
+        "platform": "YouTube",
+        "is_specific_post": false,
+        "post_type": "Generic Portal / Aggregator",
+        "cosine_similarity": null,
+        "visual_similarity": 0.4478,
+        "phash_distance": 20,
+        "verified": false
+      },
+      "deepfake_analysis": {
+        "label": "Deepfake",
+        "risk_score": 0.6974,
+        "confidence": 0.6974,
+        "is_synthetic": true,
+        "model": "prithivMLmods/Deep-Fake-Detector-v2-Model",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "NO_CONFIRMED_MATCH",
+        "best_similarity": 0.4478,
+        "threshold": 0.9,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "443cf507dd180f41f22cd1890c3028dd73e3e0ff95b3a1218fb4f42dea1b47ed"
+    },
+    "previous_hash": "2811693115f654795b8edbe36cbdd57e20dd75c4e30fb679adade8062a4e3373",
+    "hash": "05693381265418b356b4395c21757d4ad2b5302875f184193ea9b7066e6f033a"
   }
 ]

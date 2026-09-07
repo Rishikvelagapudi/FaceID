@@ -54,6 +54,55 @@ def health_check():
         },
     }
 
+@app.get("/api/diagnose")
+def diagnose_system():
+    diag = {}
+    try:
+        import psutil
+        mem = psutil.virtual_memory()
+        diag["memory_total_mb"] = round(mem.total / 1024 / 1024, 1)
+        diag["memory_available_mb"] = round(mem.available / 1024 / 1024, 1)
+    except Exception as e:
+        diag["memory_error"] = str(e)
+
+    diag["serpapi_configured"] = bool(os.getenv("SERPAPI_API_KEY") or os.getenv("SERPAPI_KEY"))
+    diag["sepolia_rpc_configured"] = bool(os.getenv("RPC_URL"))
+    diag["wallet_configured"] = bool(os.getenv("WALLET_ADDRESS"))
+    diag["private_key_configured"] = bool(os.getenv("PRIVATE_KEY"))
+
+    try:
+        import cv2
+        import numpy as np
+        dummy = np.zeros((100, 100, 3), dtype=np.uint8)
+        diag["opencv_numpy"] = "OK"
+    except Exception as e:
+        diag["opencv_numpy"] = str(e)
+
+    try:
+        valid, err = local_chain.is_valid_chain()
+        diag["blockchain"] = {"valid": valid, "length": len(local_chain), "err": err}
+    except Exception as e:
+        diag["blockchain_error"] = str(e)
+
+    try:
+        enc = pipeline.face_encoder
+        enc._load()
+        emb, info = enc.get_embedding(dummy)
+        diag["face_encoder"] = {"status": "OK", "model": enc.model_name, "info": info}
+    except Exception as e:
+        diag["face_encoder_error"] = str(e)
+
+    try:
+        df = pipeline.deepfake_classifier
+        from PIL import Image
+        pil_dummy = Image.fromarray(dummy)
+        res = df.analyze(pil_dummy)
+        diag["deepfake_classifier"] = {"status": "OK", "model": res.get("model")}
+    except Exception as e:
+        diag["deepfake_classifier_error"] = str(e)
+
+    return diag
+
 @app.post("/analyse")
 @app.post("/api/verify")
 async def analyse_image(
