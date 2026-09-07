@@ -1,8 +1,12 @@
+import os
+import logging
 from pathlib import Path
 from typing import Union, Optional, Tuple, List
 import cv2
 import numpy as np
 from PIL import Image
+
+logger = logging.getLogger(__name__)
 
 def cosine_similarity(vec1: Union[np.ndarray, List[float]], vec2: Union[np.ndarray, List[float]]) -> float:
     """Compute cosine similarity between two feature vectors."""
@@ -23,6 +27,7 @@ class FaceEncoder:
 
     def __init__(self):
         self._app = None
+        self.model_name = os.getenv("FACE_MODEL", "buffalo_s")
 
     def _load(self):
         if self._app is not None:
@@ -34,11 +39,23 @@ class FaceEncoder:
                 "InsightFace is not installed. Run: pip install -r requirements.txt"
             ) from exc
 
-        self._app = FaceAnalysis(
-            name="buffalo_l",
-            providers=["CPUExecutionProvider"]
-        )
-        self._app.prepare(ctx_id=0)
+        try:
+            self._app = FaceAnalysis(
+                name=self.model_name,
+                providers=["CPUExecutionProvider"]
+            )
+            self._app.prepare(ctx_id=0)
+        except Exception as exc:
+            if self.model_name != "buffalo_s":
+                logger.warning("Could not load %s, falling back to buffalo_s: %s", self.model_name, exc)
+                self.model_name = "buffalo_s"
+                self._app = FaceAnalysis(
+                    name="buffalo_s",
+                    providers=["CPUExecutionProvider"]
+                )
+                self._app.prepare(ctx_id=0)
+            else:
+                raise
 
     def _to_cv2(self, image_input: Union[Path, str, Image.Image, np.ndarray]) -> np.ndarray:
         if isinstance(image_input, (str, Path)):

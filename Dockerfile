@@ -16,6 +16,9 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
+# Pre-cache lightweight insightface model during image build to prevent request timeouts
+RUN python -c "from insightface.app import FaceAnalysis; FaceAnalysis(name='buffalo_s', providers=['CPUExecutionProvider']).prepare(ctx_id=0)"
+
 COPY . .
 
 EXPOSE 8000

@@ -136,14 +136,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
+            if (!response.ok) {
+                let errorMsg = `Server error (HTTP ${response.status}): ${response.statusText || 'Request failed'}`;
+                try {
+                    const errData = await response.json();
+                    if (errData && errData.detail) {
+                        errorMsg = errData.detail;
+                    }
+                } catch (_) {
+                    // Response was not JSON
+                }
+                throw new Error(errorMsg);
+            }
+
             const data = await response.json();
             const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
-
-            if (response.ok) {
-                renderTelemetry(data, elapsed);
-            } else {
-                throw new Error(data.detail || 'Verification error');
-            }
+            renderTelemetry(data, elapsed);
         } catch (err) {
             logLine.textContent = `> PIPELINE ERROR: ${err.message}`;
             seaStatusBadge.textContent = 'SCAN ERROR';
