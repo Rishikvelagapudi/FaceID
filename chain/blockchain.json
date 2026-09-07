@@ -1591,5 +1591,275 @@
     },
     "previous_hash": "05693381265418b356b4395c21757d4ad2b5302875f184193ea9b7066e6f033a",
     "hash": "ebe998ad4e1b21524af136ac05405fcb5410d1af3021a5b222580f75804da8f7"
+  },
+  {
+    "index": 15,
+    "timestamp": 1788801848.7610643,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T17:24:08.757037+00:00",
+      "source_image": {
+        "filename": "upload_5b6886c8.png",
+        "sha256": "572cd26d8b38a263bee93ee458081bafc6b7c84355069e7b96f87c669a14a4e4",
+        "phash": "ba6564638693ec9c"
+      },
+      "image": {
+        "filename": "upload_5b6886c8.png",
+        "sha256": "572cd26d8b38a263bee93ee458081bafc6b7c84355069e7b96f87c669a14a4e4",
+        "phash": "ba6564638693ec9c"
+      },
+      "biometrics": {
+        "detected": true,
+        "face_count": 1,
+        "embedding_model": "ArcFace 512-d (buffalo_s)",
+        "embedding_persistent": false,
+        "det_score": 0.8759698867797852,
+        "face_boxes": [
+          [
+            81.15418243408203,
+            54.73274612426758,
+            207.1246795654297,
+            217.7622528076172
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              116.31934356689453,
+              118.24629211425781
+            ],
+            [
+              173.4588165283203,
+              118.24517059326172
+            ],
+            [
+              143.64947509765625,
+              146.5726318359375
+            ],
+            [
+              120.01982116699219,
+              175.05357360839844
+            ],
+            [
+              166.85816955566406,
+              175.39883422851562
+            ]
+          ]
+        ]
+      },
+      "face": {
+        "detected": true,
+        "count": 1,
+        "embedding_generated": true,
+        "det_score": 0.8759698867797852,
+        "face_boxes": [
+          [
+            81.15418243408203,
+            54.73274612426758,
+            207.1246795654297,
+            217.7622528076172
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              116.31934356689453,
+              118.24629211425781
+            ],
+            [
+              173.4588165283203,
+              118.24517059326172
+            ],
+            [
+              143.64947509765625,
+              146.5726318359375
+            ],
+            [
+              120.01982116699219,
+              175.05357360839844
+            ],
+            [
+              166.85816955566406,
+              175.39883422851562
+            ]
+          ]
+        ]
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 10,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 10,
+        "error": null
+      },
+      "best_match": {
+        "title": "Virat Kohli Profile - Cricket Player India | Stats, Records ...",
+        "source": "Cricinfo",
+        "link": "https://www.cricinfo.com/cricketers/virat-kohli-253802",
+        "platform": "cricinfo.com",
+        "is_specific_post": false,
+        "post_type": "Web Article / Forum",
+        "cosine_similarity": 0.9721,
+        "visual_similarity": 0.9721,
+        "phash_distance": 24,
+        "verified": true
+      },
+      "deepfake_analysis": {
+        "label": "Deepfake",
+        "risk_score": 0.7432,
+        "confidence": 0.7432,
+        "is_synthetic": true,
+        "model": "prithivMLmods/Deep-Fake-Detector-v2-Model",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "VERIFIED",
+        "best_similarity": 0.9721,
+        "threshold": 0.9,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "92e43902bf5469b3114c8fa55b0207893f1501e161cc0bd9caf31f31108bdc65"
+    },
+    "previous_hash": "ebe998ad4e1b21524af136ac05405fcb5410d1af3021a5b222580f75804da8f7",
+    "hash": "eee226c759fe3352a657f0150fea87ba626066bde7ed35f3a632f64b2cb8c245"
+  },
+  {
+    "index": 16,
+    "timestamp": 1788801990.3231208,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T17:26:30.313666+00:00",
+      "source_image": {
+        "filename": "upload_f50d0a16.png",
+        "sha256": "572cd26d8b38a263bee93ee458081bafc6b7c84355069e7b96f87c669a14a4e4",
+        "phash": "ba6564638693ec9c"
+      },
+      "image": {
+        "filename": "upload_f50d0a16.png",
+        "sha256": "572cd26d8b38a263bee93ee458081bafc6b7c84355069e7b96f87c669a14a4e4",
+        "phash": "ba6564638693ec9c"
+      },
+      "biometrics": {
+        "detected": true,
+        "face_count": 1,
+        "embedding_model": "ArcFace 512-d (buffalo_s)",
+        "embedding_persistent": false,
+        "det_score": 0.8759698867797852,
+        "face_boxes": [
+          [
+            81.15418243408203,
+            54.73274612426758,
+            207.1246795654297,
+            217.7622528076172
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              116.31934356689453,
+              118.24629211425781
+            ],
+            [
+              173.4588165283203,
+              118.24517059326172
+            ],
+            [
+              143.64947509765625,
+              146.5726318359375
+            ],
+            [
+              120.01982116699219,
+              175.05357360839844
+            ],
+            [
+              166.85816955566406,
+              175.39883422851562
+            ]
+          ]
+        ]
+      },
+      "face": {
+        "detected": true,
+        "count": 1,
+        "embedding_generated": true,
+        "det_score": 0.8759698867797852,
+        "face_boxes": [
+          [
+            81.15418243408203,
+            54.73274612426758,
+            207.1246795654297,
+            217.7622528076172
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              116.31934356689453,
+              118.24629211425781
+            ],
+            [
+              173.4588165283203,
+              118.24517059326172
+            ],
+            [
+              143.64947509765625,
+              146.5726318359375
+            ],
+            [
+              120.01982116699219,
+              175.05357360839844
+            ],
+            [
+              166.85816955566406,
+              175.39883422851562
+            ]
+          ]
+        ]
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 10,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 10,
+        "error": null
+      },
+      "best_match": {
+        "title": "Virat Kohli Profile - Cricket Player India | Stats, Records ...",
+        "source": "Cricinfo",
+        "link": "https://www.cricinfo.com/cricketers/virat-kohli-253802",
+        "platform": "cricinfo.com",
+        "is_specific_post": false,
+        "post_type": "Web Article / Forum",
+        "cosine_similarity": 0.9721,
+        "visual_similarity": 0.9721,
+        "phash_distance": 24,
+        "verified": true
+      },
+      "deepfake_analysis": {
+        "label": "Deepfake",
+        "risk_score": 0.7432,
+        "confidence": 0.7432,
+        "is_synthetic": true,
+        "model": "prithivMLmods/Deep-Fake-Detector-v2-Model",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "VERIFIED",
+        "best_similarity": 0.9721,
+        "threshold": 0.9,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "53ddd440ff61a4c0f77bf90ff4aeb02b03f629ab4ec8f21071c4871d991ab909"
+    },
+    "previous_hash": "eee226c759fe3352a657f0150fea87ba626066bde7ed35f3a632f64b2cb8c245",
+    "hash": "4e7047ee262411c40ea2ca52711b9c897bb56517786e0f5605877fe5e7380e6a"
   }
 ]

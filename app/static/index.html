@@ -28,7 +28,7 @@
                 </div>
             </div>
             
-            <!-- Tech Stack Telemetry Badges -->
+            <!-- Tech Stack Telemetry Badges & Team Button -->
             <div class="flex flex-wrap items-center gap-2 font-mono text-[11px]">
                 <span class="bg-white border border-black px-2.5 py-1 font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center space-x-1.5">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -40,6 +40,10 @@
                 <span class="bg-white border border-black px-2.5 py-1 font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                     Ethereum Sepolia
                 </span>
+                <a href="/team" id="btn-nav-team" class="bg-amber-300 hover:bg-amber-400 text-black border-2 border-black px-3 py-1 font-extrabold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center space-x-1.5 active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer">
+                    <span>👥</span>
+                    <span class="tracking-wider">TEAM</span>
+                </a>
             </div>
         </header>
 
@@ -72,14 +76,33 @@
                 </div>
 
                 <!-- Central Geometric Scan Target Box -->
-                <div class="border-2 border-black bg-[#FAF8F3] p-4 text-center relative overflow-hidden shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+                <div id="drop-zone" class="border-2 border-dashed border-black bg-[#FAF8F3] p-4 text-center relative overflow-hidden shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all">
                     
                     <!-- File Input Hidden -->
                     <input type="file" id="file-input" accept="image/*" class="hidden">
 
                     <!-- Canvas Preview for Image + Landmark Overlay -->
-                    <div id="preview-container" class="hidden relative w-full h-64 bg-slate-950 border-2 border-black flex items-center justify-center overflow-hidden mb-3">
+                    <div id="preview-container" class="hidden relative w-full h-64 bg-slate-950 border-2 border-black flex items-center justify-center overflow-hidden mb-3 group">
                         <canvas id="canvas-overlay" class="max-w-full max-h-full object-contain"></canvas>
+                        <div class="absolute top-2 right-2 flex items-center space-x-1.5 z-20">
+                            <button id="btn-download-img" title="Download Analyzed Facial Image" class="bg-black/90 hover:bg-black text-amber-300 border border-black px-2.5 py-1 text-[11px] font-mono font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center space-x-1 active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer">
+                                <span>📥</span>
+                                <span>DOWNLOAD IMAGE</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Webcam Live Capture Container -->
+                    <div id="webcam-container" class="hidden relative w-full h-64 bg-black border-2 border-black flex flex-col items-center justify-center overflow-hidden mb-3">
+                        <video id="webcam-video" autoplay playsinline class="w-full h-full object-cover"></video>
+                        <div class="absolute bottom-2 left-0 right-0 flex justify-center space-x-2">
+                            <button id="btn-snap-webcam" class="bg-amber-400 text-black font-mono font-bold text-xs px-3 py-1 border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-amber-300">
+                                📸 SNAP PHOTO
+                            </button>
+                            <button id="btn-cancel-webcam" class="bg-red-600 text-white font-mono font-bold text-xs px-3 py-1 border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-red-500">
+                                ✕ CANCEL
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Default Scanner Graphic (when awaiting image) -->
@@ -91,9 +114,9 @@
                             </svg>
                         </div>
                         <div class="bg-black text-emerald-400 font-mono text-xs font-extrabold py-1.5 px-3 inline-block uppercase tracking-wider border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                            &gt;&gt;&gt; READY FOR FACIAL SCAN
+                            &gt;&gt;&gt; CLICK OR DRAG IMAGE HERE &lt;&lt;&lt;
                         </div>
-                        <p class="text-xs font-mono font-bold text-slate-700">Click to upload image or drop file here</p>
+                        <p class="text-xs font-mono font-bold text-slate-700">Drop facial scan, photo, or portrait</p>
                     </div>
 
                 </div>
@@ -102,7 +125,18 @@
                 <div class="space-y-3 font-mono text-xs">
                     
                     <div class="flex items-center justify-between border-2 border-black p-2 bg-[#F2EDE0] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                        <span class="font-extrabold text-black">ANCHOR ON SEPOLIA CHAIN:</span>
+                        <span class="font-extrabold text-black">COSINE SIMILARITY THRESHOLD:</span>
+                        <div class="flex items-center space-x-2">
+                            <input type="range" id="threshold-slider" min="0.20" max="0.90" step="0.05" value="0.45" class="accent-black w-24 cursor-pointer">
+                            <span id="threshold-val" class="font-bold text-xs bg-white px-1.5 py-0.5 border border-black">0.45</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between border-2 border-black p-2 bg-[#F2EDE0] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                        <div>
+                            <span class="font-extrabold text-black block">ANCHOR ON SEPOLIA CHAIN:</span>
+                            <span class="text-[10px] text-slate-600">(Layer 1 local ledger is always recorded)</span>
+                        </div>
                         <label class="relative inline-flex items-center cursor-pointer">
                             <input type="checkbox" id="chk-blockchain" class="sr-only peer">
                             <div class="w-9 h-5 bg-slate-400 peer-focus:outline-none border-2 border-black rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-black after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-2 after:border-black after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-500"></div>
@@ -117,10 +151,16 @@
 
                 <!-- Quick Profiles Prompt Bar -->
                 <div class="pt-3 border-t-2 border-black font-mono text-[11px] space-y-2">
-                    <span class="font-extrabold text-slate-800 uppercase block">💡 QUICK SAMPLE PROFILES:</span>
+                    <span class="font-extrabold text-slate-800 uppercase block">💡 QUICK SAMPLE PROFILES & TOOLS:</span>
                     <div class="flex flex-wrap gap-2">
                         <button id="btn-sample-1" class="border border-black bg-[#FAF8F3] hover:bg-black hover:text-white px-2.5 py-1 font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
-                            [SAMPLE SCAN PROFILE]
+                            [SAMPLE 1: PORTRAIT]
+                        </button>
+                        <button id="btn-sample-2" class="border border-black bg-[#FAF8F3] hover:bg-black hover:text-white px-2.5 py-1 font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+                            [SAMPLE 2: VIRAT KOHLI]
+                        </button>
+                        <button id="btn-webcam" class="border border-black bg-amber-200 hover:bg-amber-300 px-2.5 py-1 font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all flex items-center space-x-1">
+                            <span>📸</span><span>USE WEBCAM</span>
                         </button>
                     </div>
                 </div>
@@ -136,7 +176,7 @@
                 </div>
 
                 <!-- Dark Emerald Cyber Grid Canvas Area -->
-                <div id="grid-viewport" class="border-2 border-black bg-[#061A14] min-h-[380px] p-5 text-emerald-400 font-mono relative overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
+                <div id="grid-viewport" class="border-2 border-black bg-[#061A14] min-h-[420px] p-5 text-emerald-400 font-mono relative overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
                     
                     <!-- Grid Background Pattern Layer -->
                     <div class="absolute inset-0 bg-[linear-gradient(to_right,#09382b_1px,transparent_1px),linear-gradient(to_bottom,#09382b_1px,transparent_1px)] bg-[size:24px_24px] opacity-40"></div>
@@ -148,7 +188,7 @@
                         </div>
                         <h3 class="text-sm font-extrabold uppercase tracking-widest text-emerald-300">AWAITING BIOMETRIC SCAN INPUT</h3>
                         <p class="text-xs text-emerald-600/90 max-w-md mx-auto leading-relaxed">
-                            Upload a facial image into <span class="text-emerald-300 font-bold">The Biometric Terminal</span> to execute local ArcFace detection, pHash perceptual comparison, and Sepolia blockchain proof verification.
+                            Upload a facial image into <span class="text-emerald-300 font-bold">The Biometric Terminal</span> to execute local ArcFace detection, Google Lens reverse attribution, Deepfake ViT risk assessment, and Dual-layer blockchain proof verification.
                         </p>
                     </div>
 
@@ -167,12 +207,12 @@
                             </div>
                         </div>
 
-                        <!-- 4 Step Telemetry Modules Grid -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <!-- 6 Step Telemetry Modules Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                             
                             <!-- Module 1: Face Detection -->
                             <div class="border border-emerald-500/30 bg-[#082018] p-3 space-y-1">
-                                <div class="text-[10px] font-bold text-emerald-500 uppercase">1. LOCAL ARCFACE DETECTION</div>
+                                <div class="text-[10px] font-bold text-emerald-500 uppercase">1. ARCFACE 512-D BIOMETRICS</div>
                                 <div id="tele-face-detected" class="text-emerald-300 font-bold">Detected: False</div>
                                 <div id="tele-face-count" class="text-emerald-600">Faces: 0</div>
                             </div>
@@ -187,22 +227,39 @@
                             <!-- Module 3: Reverse Search -->
                             <div class="border border-emerald-500/30 bg-[#082018] p-3 space-y-1">
                                 <div class="text-[10px] font-bold text-emerald-500 uppercase">3. GOOGLE LENS REVERSE SCAN</div>
-                                <div id="tele-search-count" class="text-emerald-300 font-bold">Candidates Found: 0</div>
-                                <div id="tele-search-engine" class="text-emerald-600">Engine: SerpApi Google Lens</div>
+                                <div id="tele-search-count" class="text-emerald-300 font-bold">Candidates: 0</div>
+                                <div id="tele-search-engine" class="text-emerald-600 truncate">Engine: SerpApi Lens</div>
                             </div>
 
-                            <!-- Module 4: Sepolia Blockchain -->
+                            <!-- Module 4: Local Blockchain L1 -->
                             <div class="border border-emerald-500/30 bg-[#082018] p-3 space-y-1">
-                                <div class="text-[10px] font-bold text-emerald-500 uppercase">4. SEPOLIA BLOCKCHAIN ANCHOR</div>
+                                <div class="text-[10px] font-bold text-emerald-500 uppercase">4. LOCAL BLOCKCHAIN (L1)</div>
+                                <div id="tele-l1-status" class="text-emerald-300 font-bold">Status: RECORDED ✓</div>
+                                <div id="tele-l1-block" class="truncate text-emerald-500">Block: #--</div>
+                            </div>
+
+                            <!-- Module 5: Sepolia Blockchain L2 -->
+                            <div class="border border-emerald-500/30 bg-[#082018] p-3 space-y-1">
+                                <div class="text-[10px] font-bold text-emerald-500 uppercase">5. SEPOLIA TESTNET (L2)</div>
                                 <div id="tele-bc-status" class="text-amber-300 font-bold">Status: NOT SUBMITTED</div>
                                 <div id="tele-bc-link" class="truncate text-emerald-400">Tx: N/A</div>
+                            </div>
+
+                            <!-- Module 6: ViT Deepfake Classifier -->
+                            <div class="border border-emerald-500/30 bg-[#082018] p-3 space-y-1">
+                                <div class="text-[10px] font-bold text-emerald-500 uppercase">6. AI DEEPFAKE ANALYSIS</div>
+                                <div id="tele-deepfake-label" class="text-emerald-300 font-bold">Status: PENDING</div>
+                                <div id="tele-deepfake-risk" class="truncate text-amber-300">Risk: --</div>
                             </div>
 
                         </div>
 
                         <!-- Candidates Gallery Grid -->
                         <div class="border border-emerald-500/30 bg-[#082018] p-3 space-y-2">
-                            <div class="text-[10px] font-bold text-emerald-500 uppercase">REVERSE SEARCH CANDIDATE MATRIX</div>
+                            <div class="flex items-center justify-between">
+                                <div class="text-[10px] font-bold text-emerald-500 uppercase">REVERSE SEARCH CANDIDATE MATRIX</div>
+                                <div id="tele-best-social" class="text-[10px] text-amber-300 font-bold truncate max-w-xs"></div>
+                            </div>
                             <div id="tele-candidates" class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                                 <span class="text-emerald-700 italic text-[11px]">No external matches found.</span>
                             </div>

@@ -2,9 +2,9 @@ import base64
 import os
 import uuid
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Union, Any
 
-from fastapi import FastAPI, File, UploadFile, HTTPException, Query
+from fastapi import FastAPI, File, UploadFile, HTTPException, Query, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, JSONResponse
@@ -105,9 +105,9 @@ def diagnose_system():
 
 @app.post("/analyse")
 @app.post("/api/verify")
-async def analyse_image(
+def analyse_image(
     file: UploadFile = File(...),
-    write_blockchain: bool = False,
+    write_blockchain: Optional[Union[bool, str]] = Form(False),
     threshold: Optional[float] = Query(None, description="Cosine similarity threshold"),
     top_k: Optional[int] = Query(None, description="Max candidate results to inspect"),
 ):
@@ -119,11 +119,17 @@ async def analyse_image(
     and logs to Layer 1 local blockchain (+ optional Layer 2 Sepolia).
     """
     try:
+        wb = False
+        if isinstance(write_blockchain, bool):
+            wb = write_blockchain
+        elif isinstance(write_blockchain, str):
+            wb = write_blockchain.strip().lower() in ("true", "1", "yes")
+
         file_ext = Path(file.filename).suffix or ".jpg"
         temp_filename = f"upload_{uuid.uuid4().hex[:8]}{file_ext}"
         temp_path = UPLOAD_DIR / temp_filename
 
-        contents = await file.read()
+        contents = file.file.read()
         temp_path.write_bytes(contents)
 
         if threshold is not None:
@@ -131,7 +137,7 @@ async def analyse_image(
 
         result = pipeline.run(
             image_path=temp_path,
-            write_blockchain=write_blockchain,
+            write_blockchain=wb,
             max_results=top_k,
             verbose=False,
         )
@@ -141,7 +147,7 @@ async def analyse_image(
         raise HTTPException(status_code=500, detail=str(exc))
 
 @app.post("/api/verify-base64")
-async def verify_image_base64(req: Base64ImageRequest):
+def verify_image_base64(req: Base64ImageRequest):
     """
     Webcam live capture endpoint.
     """
@@ -160,7 +166,7 @@ async def verify_image_base64(req: Base64ImageRequest):
 
         result = pipeline.run(
             image_path=temp_path,
-            write_blockchain=req.write_blockchain,
+            write_blockchain=bool(req.write_blockchain),
             max_results=req.top_k,
             verbose=False,
         )
@@ -210,3 +216,10 @@ def serve_index():
     if index_file.exists():
         return FileResponse(str(index_file))
     return {"message": "FaceID Forensic API is running. Web UI not found."}
+
+@app.get("/team")
+def serve_team():
+    team_file = static_dir / "team.html"
+    if team_file.exists():
+        return FileResponse(str(team_file))
+    return {"message": "Team page not found."}

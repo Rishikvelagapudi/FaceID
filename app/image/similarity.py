@@ -34,6 +34,7 @@ def verify_candidate(
     face_encoder = None,
     similarity_threshold: float = 0.40,
     phash_max_distance: int = 12,
+    candidate_image: Optional[Image.Image] = None,
 ) -> Dict[str, Any]:
     """
     Independently re-verifies a candidate image by downloading it, extracting
@@ -41,11 +42,11 @@ def verify_candidate(
     exact cosine similarity alongside perceptual hashing.
     """
     candidate_url = item.get("image_url")
-    if not candidate_url:
+    if not candidate_url and candidate_image is None:
         raise ValueError("No candidate image URL available.")
 
     original = Image.open(original_path).convert("RGB")
-    candidate = download_image(candidate_url)
+    candidate = candidate_image if candidate_image is not None else download_image(candidate_url)
 
     # 1. Perceptual hashing (pHash)
     original_phash = imagehash.phash(original)

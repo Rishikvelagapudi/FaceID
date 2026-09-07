@@ -3,6 +3,7 @@ import json
 import logging
 import os
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Any, Optional
@@ -91,17 +92,34 @@ class FaceIDPipeline:
 
         # [3/9] Downloading candidate images
         if verbose:
-            print(f"[3/9] Downloading candidate images…")
+            print(f"[3/9] Downloading candidate images in parallel…")
         # [4/9] & [5/9] Extracting face embeddings and ranking by cosine similarity
         if verbose:
             print(f"[4/9] Extracting face embeddings from candidates…")
+
+        def _fetch_candidate(item):
+            url = item.get("image_url")
+            if not url:
+                return item, None
+            try:
+                from app.image.downloader import download_image
+                return item, download_image(url)
+            except Exception:
+                return item, None
+
+        downloaded_items = []
+        if raw_results:
+            with ThreadPoolExecutor(max_workers=min(6, len(raw_results))) as executor:
+                downloaded_items = list(executor.map(_fetch_candidate, raw_results))
 
         verified_results = []
         candidates_with_faces = 0
         downloaded_count = 0
 
-        for item in raw_results:
+        for item, cand_img in downloaded_items:
             try:
+                if cand_img is None:
+                    raise ValueError("Failed to download candidate image")
                 comparison = verify_candidate(
                     original_path=image_path,
                     item=item,
@@ -109,6 +127,7 @@ class FaceIDPipeline:
                     face_encoder=self.face_encoder,
                     similarity_threshold=self.similarity_threshold,
                     phash_max_distance=self.phash_max_distance,
+                    candidate_image=cand_img,
                 )
                 downloaded_count += 1
                 if comparison.get("candidate_face_detected"):
