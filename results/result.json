@@ -1,22 +1,22 @@
 {
   "source_image": {
     "filename": "sample.jpg",
-    "sha256": "708d6852d0bc089b85cf8bd721be6822e5469a6c0509f7b762b6e52ba47ab56c"
+    "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d"
   },
   "best_match": {
-    "platform": "Instagram",
-    "url": "https://www.instagram.com/reel/DXGaS1lDMC1/",
-    "cosine_similarity": 1.0000,
-    "confirmed": true
+    "platform": "Reddit",
+    "url": "https://www.reddit.com/r/katamari/comments/1me54er/katamari_time/",
+    "cosine_similarity": 0.4856,
+    "confirmed": false
   },
   "evidence": {
-    "sha256_hash": "cbfd4687a965dfabbb143fa3b481c7862303abdb5dfc336bbc3966a47a8a4b41",
+    "sha256_hash": "83ffb62af2a30b5fd64e05faa2d8238fac69114337f3ba310f5d22144f44db39",
     "timestamp": 1726058400
   },
   "blockchain": {
     "network": "Ethereum Sepolia Testnet",
     "chain_id": 11155111,
-    "tx_hash": "0x866a0e6987418ccb7cd9fb013694487e4dc3e7cd8dac70c68b91116bbdff42ac",
-    "explorer_url": "https://sepolia.etherscan.io/tx/0x866a0e6987418ccb7cd9fb013694487e4dc3e7cd8dac70c68b91116bbdff42ac"
+    "tx_hash": "0x71369e339dcbd5658339989a3187568c272aae1b747ffe2ba9eb15db778372cd",
+    "explorer_url": "https://sepolia.etherscan.io/tx/0x71369e339dcbd5658339989a3187568c272aae1b747ffe2ba9eb15db778372cd"
   }
 }

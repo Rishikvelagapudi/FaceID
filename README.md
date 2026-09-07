@@ -331,11 +331,11 @@ An actual forensic execution produced the following tamper-evident artifact reco
 
 | Metric / Field | Verified Value |
 |:---|:---|
-| **Source Image Hash (SHA-256)** | `708d6852d0bc089b85cf8bd721be6822e5469a6c0509f7b762b6e52ba47ab56c` |
-| **Discovered Social Post** | [Instagram Reel `DXGaS1lDMC1`](https://www.instagram.com/reel/DXGaS1lDMC1/) |
-| **Face Match Cosine Similarity** | `1.0000` (Direct biometric identity confirmation) |
-| **Evidence Record Hash** | `cbfd4687a965dfabbb143fa3b481c7862303abdb5dfc336bbc3966a47a8a4b41` |
-| **Ethereum Sepolia TX Hash** | [`0x866a0e6987418ccb7cd9fb013694487e4dc3e7cd8dac70c68b91116bbdff42ac`](https://sepolia.etherscan.io/tx/866a0e6987418ccb7cd9fb013694487e4dc3e7cd8dac70c68b91116bbdff42ac) |
+| **Source Image Hash (SHA-256)** | `954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d` |
+| **Discovered Social Post** | [Reddit Post `katamari_time`](https://www.reddit.com/r/katamari/comments/1me54er/katamari_time/) |
+| **Face Match / Visual Similarity** | `0.4856` (OSINT visual candidate match) |
+| **Evidence Record Hash** | `83ffb62af2a30b5fd64e05faa2d8238fac69114337f3ba310f5d22144f44db39` |
+| **Ethereum Sepolia TX Hash** | [`0x71369e339dcbd5658339989a3187568c272aae1b747ffe2ba9eb15db778372cd`](https://sepolia.etherscan.io/tx/0x71369e339dcbd5658339989a3187568c272aae1b747ffe2ba9eb15db778372cd) |
 
 > [!IMPORTANT]
 > **Independent Public Verification:** Anyone can open the Etherscan link above, click **"Click to show more"**, view the **Input Data**, select **"UTF-8"**, and directly read the exact Evidence Hash anchored permanently into the Ethereum blockchain.
