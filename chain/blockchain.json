@@ -84,5 +84,1848 @@
     },
     "previous_hash": "b6e30c46873474b7a1a22e0bb103f85934f45a42439658668a434850b11e4b8d",
     "hash": "bec3f2ef599e25fa6c5193504341c01e1b833a21b40174186339b539337a80d2"
+  },
+  {
+    "index": 2,
+    "timestamp": 1788762185.3904543,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T06:23:05.389366+00:00",
+      "source_image": {
+        "filename": "upload_59ed5c9d.png",
+        "sha256": "572cd26d8b38a263bee93ee458081bafc6b7c84355069e7b96f87c669a14a4e4",
+        "phash": "ba6564638693ec9c"
+      },
+      "image": {
+        "filename": "upload_59ed5c9d.png",
+        "sha256": "572cd26d8b38a263bee93ee458081bafc6b7c84355069e7b96f87c669a14a4e4",
+        "phash": "ba6564638693ec9c"
+      },
+      "biometrics": {
+        "detected": true,
+        "face_count": 1,
+        "embedding_model": "ArcFace 512-d (buffalo_l)",
+        "embedding_persistent": false,
+        "det_score": 0.9038841724395752,
+        "face_boxes": [
+          [
+            80.0684814453125,
+            51.27796936035156,
+            207.31980895996094,
+            214.8474578857422
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              115.04418182373047,
+              116.99591827392578
+            ],
+            [
+              174.9100799560547,
+              117.15668487548828
+            ],
+            [
+              144.4901885986328,
+              139.67910766601562
+            ],
+            [
+              119.04249572753906,
+              171.95364379882812
+            ],
+            [
+              168.63946533203125,
+              172.24339294433594
+            ]
+          ]
+        ]
+      },
+      "face": {
+        "detected": true,
+        "count": 1,
+        "embedding_generated": true,
+        "det_score": 0.9038841724395752,
+        "face_boxes": [
+          [
+            80.0684814453125,
+            51.27796936035156,
+            207.31980895996094,
+            214.8474578857422
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              115.04418182373047,
+              116.99591827392578
+            ],
+            [
+              174.9100799560547,
+              117.15668487548828
+            ],
+            [
+              144.4901885986328,
+              139.67910766601562
+            ],
+            [
+              119.04249572753906,
+              171.95364379882812
+            ],
+            [
+              168.63946533203125,
+              172.24339294433594
+            ]
+          ]
+        ]
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 10,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 10,
+        "error": null
+      },
+      "best_match": {
+        "title": "Virat Kohli Profile - Cricket Player India | Stats, Records ...",
+        "source": "Cricinfo",
+        "link": "https://www.cricinfo.com/cricketers/virat-kohli-253802",
+        "platform": "cricinfo.com",
+        "is_specific_post": false,
+        "post_type": "Web Article / Forum",
+        "cosine_similarity": 0.9708,
+        "visual_similarity": 0.9708,
+        "phash_distance": 24,
+        "verified": true
+      },
+      "deepfake_analysis": {
+        "label": "Authentic / Real",
+        "risk_score": 0.05,
+        "confidence": 0.9,
+        "is_synthetic": false,
+        "model": "Spatial-FFT-Heuristic (Offline Fallback)",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "VERIFIED",
+        "best_similarity": 0.9708,
+        "threshold": 0.9,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "6eff3e3f5d567bba2265a4b96d4cb61f252d1dc3aea9240794b7bbdfbd3d6bff",
+      "blockchain_layer1": {
+        "block_index": 2,
+        "block_hash": "dd77da495feae67301ff135d8d1475e1e98888522f7e0c152ff6d49e30e9f61e",
+        "previous_hash": "bec3f2ef599e25fa6c5193504341c01e1b833a21b40174186339b539337a80d2",
+        "verified": true
+      },
+      "blockchain_layer2": {
+        "submitted": false,
+        "network": "Ethereum Sepolia Testnet",
+        "tx_hash": null,
+        "explorer_url": null,
+        "reason": "Skipped (no-blockchain flag or unconfigured wallet)"
+      },
+      "blockchain": {
+        "submitted": false,
+        "network": "Ethereum Sepolia Testnet",
+        "tx_hash": null,
+        "explorer_url": null,
+        "reason": "Skipped (no-blockchain flag or unconfigured wallet)"
+      },
+      "matches": [
+        {
+          "title": "Virat Kohli Profile - Cricket Player India | Stats, Records ...",
+          "source": "Cricinfo",
+          "link": "https://www.cricinfo.com/cricketers/virat-kohli-253802",
+          "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSk0NpyBMfvEtZC_D9VIZ63XLt8OYaUE58p6_C4U0RHolfsl5vC",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSk0NpyBMfvEtZC_D9VIZ63XLt8OYaUE58p6_C4U0RHolfsl5vC",
+          "phash_distance": 24,
+          "phash_similarity": 0.625,
+          "histogram_cosine": 0.2121,
+          "cosine_similarity": 0.9708,
+          "visual_similarity": 0.9708,
+          "candidate_face_detected": true,
+          "candidate_norm": 23.61,
+          "verified": true,
+          "social_meta": {
+            "platform": "cricinfo.com",
+            "is_specific_post": false,
+            "post_type": "Web Article / Forum",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.35
+          }
+        },
+        {
+          "title": "Virat Kohli - The Leader (@leadervirat) • Facebook",
+          "source": "Facebook",
+          "link": "https://www.facebook.com/leadervirat/",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTuwXpqZ4q-e-MMJueMJl8V8Q1jm7a--_9Q-GXy0ZrZVG8znxes",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTuwXpqZ4q-e-MMJueMJl8V8Q1jm7a--_9Q-GXy0ZrZVG8znxes",
+          "phash_distance": 10,
+          "phash_similarity": 0.8438,
+          "histogram_cosine": 0.5724,
+          "cosine_similarity": 0.9671,
+          "visual_similarity": 0.9671,
+          "candidate_face_detected": true,
+          "candidate_norm": 23.11,
+          "verified": true,
+          "social_meta": {
+            "platform": "Facebook",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Vaibhav Khandekar - Student at Savitribai Phule Pune ...",
+          "source": "LinkedIn",
+          "link": "https://in.linkedin.com/in/vaibhav-khandekar-9a9a38183",
+          "image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS7NVXAaXLCzVHTw0hGHEuZNR1ijLnnYcT6uJf1nqE0AXsucYbs",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS7NVXAaXLCzVHTw0hGHEuZNR1ijLnnYcT6uJf1nqE0AXsucYbs",
+          "phash_distance": 12,
+          "phash_similarity": 0.8125,
+          "histogram_cosine": 0.5475,
+          "cosine_similarity": 0.9608,
+          "visual_similarity": 0.9608,
+          "candidate_face_detected": true,
+          "candidate_norm": 24.23,
+          "verified": true,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Deposed captains Kohli, De Kock gear up for one-day series ...",
+          "source": "Daily FT",
+          "link": "https://www.ft.lk/sports/Deposed-captains-Kohli--De-Kock-gear-up-for-one-day-series/23-729291",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzX7nxhS7VpF68hoyEC8hpMixKmqEpxmP3YmlgL1RJmw915KgJ",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzX7nxhS7VpF68hoyEC8hpMixKmqEpxmP3YmlgL1RJmw915KgJ",
+          "phash_distance": 20,
+          "phash_similarity": 0.6875,
+          "histogram_cosine": 0.2362,
+          "cosine_similarity": 0.9494,
+          "visual_similarity": 0.9494,
+          "candidate_face_detected": true,
+          "candidate_norm": 25.02,
+          "verified": true,
+          "social_meta": {
+            "platform": "ft.lk",
+            "is_specific_post": false,
+            "post_type": "Web Article / Forum",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.35
+          }
+        },
+        {
+          "title": "V Kohli headshot | Cricinfo.com",
+          "source": "Cricinfo",
+          "link": "https://www.cricinfo.com/photo/v-kohli-headshot-1251236",
+          "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT596do1OHosa5xFYrrtk-7_qy-SUlPcggjzmwf1VCtdB-NevnU",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT596do1OHosa5xFYrrtk-7_qy-SUlPcggjzmwf1VCtdB-NevnU",
+          "phash_distance": 24,
+          "phash_similarity": 0.625,
+          "histogram_cosine": 0.1864,
+          "cosine_similarity": 0.9378,
+          "visual_similarity": 0.9378,
+          "candidate_face_detected": true,
+          "candidate_norm": 24.48,
+          "verified": true,
+          "social_meta": {
+            "platform": "cricinfo.com",
+            "is_specific_post": false,
+            "post_type": "Web Article / Forum",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.35
+          }
+        },
+        {
+          "title": "Harsh⁶³ on X: \"Rohit Sharma and Virat Kohli without Hairs ...",
+          "source": "x.com",
+          "link": "https://x.com/HarshRo45__/status/1400670348798873601",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqLDH3ZkdwtA3Ra4ujiJbEMTgl4n6CeaJV6hgUvxsoxqBuTrrf",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqLDH3ZkdwtA3Ra4ujiJbEMTgl4n6CeaJV6hgUvxsoxqBuTrrf",
+          "phash_distance": 26,
+          "phash_similarity": 0.5938,
+          "histogram_cosine": 0.1842,
+          "cosine_similarity": 0.7229,
+          "visual_similarity": 0.7229,
+          "candidate_face_detected": true,
+          "candidate_norm": 23.61,
+          "verified": false,
+          "social_meta": {
+            "platform": "X / Twitter",
+            "is_specific_post": true,
+            "post_type": "Status",
+            "post_id": "1400670348798873601",
+            "is_video": false,
+            "trust_score": 0.95
+          }
+        },
+        {
+          "title": "YouTube",
+          "source": "YouTube",
+          "link": "https://www.youtube.com/shorts/5MvHYTKKwuU",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRosDikmLrKy1cQQmTw_pyck-UZe4jqlKTJs_XcQP4Iqjh9Sltp",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRosDikmLrKy1cQQmTw_pyck-UZe4jqlKTJs_XcQP4Iqjh9Sltp",
+          "phash_distance": 30,
+          "phash_similarity": 0.5312,
+          "histogram_cosine": 0.1951,
+          "cosine_similarity": 0.7023,
+          "visual_similarity": 0.7023,
+          "candidate_face_detected": true,
+          "candidate_norm": 21.01,
+          "verified": false,
+          "social_meta": {
+            "platform": "YouTube",
+            "is_specific_post": true,
+            "post_type": "Short",
+            "post_id": "5MvHYTKKwuU",
+            "is_video": true,
+            "trust_score": 0.95
+          }
+        },
+        {
+          "title": "Virat Kohli fans#",
+          "source": "Instagram",
+          "link": "https://www.instagram.com/p/DYhkxgtmew0/",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSNzjqr2yMXqBgbN1kAYMYEQULrOjbn0-9ViOLwzHsVcPuBj_gp",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSNzjqr2yMXqBgbN1kAYMYEQULrOjbn0-9ViOLwzHsVcPuBj_gp",
+          "phash_distance": 30,
+          "phash_similarity": 0.5312,
+          "histogram_cosine": 0.071,
+          "cosine_similarity": 0.6823,
+          "visual_similarity": 0.6823,
+          "candidate_face_detected": true,
+          "candidate_norm": 21.55,
+          "verified": false,
+          "social_meta": {
+            "platform": "Instagram",
+            "is_specific_post": true,
+            "post_type": "Post",
+            "post_id": "DYhkxgtmew0",
+            "is_video": false,
+            "trust_score": 0.95
+          }
+        },
+        {
+          "title": "Discover 120 virat and virat kohli rare pics ideas | virat ...",
+          "source": "Pinterest",
+          "link": "https://in.pinterest.com/damala464/virat/",
+          "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTf8GEHOi-jRjuguwz-U6UgA_35t7W0IaK2GXOH_LNFsOK_nox6",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTf8GEHOi-jRjuguwz-U6UgA_35t7W0IaK2GXOH_LNFsOK_nox6",
+          "phash_distance": 16,
+          "phash_similarity": 0.75,
+          "histogram_cosine": 0.1501,
+          "cosine_similarity": 0.6683,
+          "visual_similarity": 0.6683,
+          "candidate_face_detected": true,
+          "candidate_norm": 24.52,
+          "verified": false,
+          "social_meta": {
+            "platform": "Pinterest",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "viralvideos #viratkholi",
+          "source": "Instagram",
+          "link": "https://www.instagram.com/p/DSkodFvE-YS/",
+          "image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSX2pzJkFw6HYxSmX_R7s6m-yoGaa68WDEdGeY26nCbGOVOWhaD",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSX2pzJkFw6HYxSmX_R7s6m-yoGaa68WDEdGeY26nCbGOVOWhaD",
+          "phash_distance": 28,
+          "phash_similarity": 0.5625,
+          "histogram_cosine": 0.2389,
+          "cosine_similarity": 0.6657,
+          "visual_similarity": 0.6657,
+          "candidate_face_detected": true,
+          "candidate_norm": 22.98,
+          "verified": false,
+          "social_meta": {
+            "platform": "Instagram",
+            "is_specific_post": true,
+            "post_type": "Post",
+            "post_id": "DSkodFvE-YS",
+            "is_video": true,
+            "trust_score": 0.95
+          }
+        }
+      ],
+      "report_path": "results\\upload_59ed5c9d_report.json"
+    },
+    "previous_hash": "bec3f2ef599e25fa6c5193504341c01e1b833a21b40174186339b539337a80d2",
+    "hash": "dd77da495feae67301ff135d8d1475e1e98888522f7e0c152ff6d49e30e9f61e"
+  },
+  {
+    "index": 3,
+    "timestamp": 1788762390.1251516,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T06:26:30.124896+00:00",
+      "source_image": {
+        "filename": "webcam_7d719d45.jpg",
+        "sha256": "cf6cb07d0f5e0ea609d73af90e9ea97f51de05e77b40b742e3fffe9be57abf9e",
+        "phash": "b7880d186f72635b"
+      },
+      "image": {
+        "filename": "webcam_7d719d45.jpg",
+        "sha256": "cf6cb07d0f5e0ea609d73af90e9ea97f51de05e77b40b742e3fffe9be57abf9e",
+        "phash": "b7880d186f72635b"
+      },
+      "biometrics": {
+        "detected": true,
+        "face_count": 1,
+        "embedding_model": "ArcFace 512-d (buffalo_l)",
+        "embedding_persistent": false,
+        "det_score": 0.8053011894226074,
+        "face_boxes": [
+          [
+            510.8453369140625,
+            302.77947998046875,
+            737.4694213867188,
+            613.40625
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              574.534912109375,
+              416.7082214355469
+            ],
+            [
+              687.1436157226562,
+              417.571533203125
+            ],
+            [
+              635.030517578125,
+              472.1497802734375
+            ],
+            [
+              582.1260375976562,
+              531.8977661132812
+            ],
+            [
+              680.6751098632812,
+              532.435302734375
+            ]
+          ]
+        ]
+      },
+      "face": {
+        "detected": true,
+        "count": 1,
+        "embedding_generated": true,
+        "det_score": 0.8053011894226074,
+        "face_boxes": [
+          [
+            510.8453369140625,
+            302.77947998046875,
+            737.4694213867188,
+            613.40625
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              574.534912109375,
+              416.7082214355469
+            ],
+            [
+              687.1436157226562,
+              417.571533203125
+            ],
+            [
+              635.030517578125,
+              472.1497802734375
+            ],
+            [
+              582.1260375976562,
+              531.8977661132812
+            ],
+            [
+              680.6751098632812,
+              532.435302734375
+            ]
+          ]
+        ]
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 10,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 10,
+        "error": null
+      },
+      "best_match": {
+        "title": "Milan Chanda - BCA Student | Web Frontend Developer Intern ...",
+        "source": "LinkedIn",
+        "link": "https://in.linkedin.com/in/milan-chanda",
+        "platform": "LinkedIn",
+        "is_specific_post": false,
+        "post_type": "Generic Portal / Aggregator",
+        "cosine_similarity": 0.2695,
+        "visual_similarity": 0.2695,
+        "phash_distance": 38,
+        "verified": false
+      },
+      "deepfake_analysis": {
+        "label": "Authentic / Real",
+        "risk_score": 0.05,
+        "confidence": 0.9,
+        "is_synthetic": false,
+        "model": "Spatial-FFT-Heuristic (Offline Fallback)",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "NO_CONFIRMED_MATCH",
+        "best_similarity": 0.2695,
+        "threshold": 0.9,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "c713f4fbeb1f05ae14286d9aaeef293ac8f752f9ff384d7b85f87602afa0bc68",
+      "blockchain_layer1": {
+        "block_index": 3,
+        "block_hash": "524fdfd3e251f618ff33135dda3770cac59184a1613e9e3234f6b50d9744871b",
+        "previous_hash": "dd77da495feae67301ff135d8d1475e1e98888522f7e0c152ff6d49e30e9f61e",
+        "verified": false
+      },
+      "blockchain_layer2": {
+        "submitted": true,
+        "network": "Ethereum Sepolia Testnet",
+        "chain_id": 11155111,
+        "tx_hash": "0x51858d97aa610edbc9149a4f0ccf37aad16b3adc6fc960462eb467897c63db54",
+        "block_number": 11652420,
+        "explorer_url": "https://sepolia.etherscan.io/tx/0x51858d97aa610edbc9149a4f0ccf37aad16b3adc6fc960462eb467897c63db54"
+      },
+      "blockchain": {
+        "submitted": true,
+        "network": "Ethereum Sepolia Testnet",
+        "chain_id": 11155111,
+        "tx_hash": "0x51858d97aa610edbc9149a4f0ccf37aad16b3adc6fc960462eb467897c63db54",
+        "block_number": 11652420,
+        "explorer_url": "https://sepolia.etherscan.io/tx/0x51858d97aa610edbc9149a4f0ccf37aad16b3adc6fc960462eb467897c63db54"
+      },
+      "matches": [
+        {
+          "title": "Milan Chanda - BCA Student | Web Frontend Developer Intern ...",
+          "source": "LinkedIn",
+          "link": "https://in.linkedin.com/in/milan-chanda",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9mA3ed3ccO0oH6xWqJAyOF99gj5MbQmvIZSNOzIf1zsOo6DBQ",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9mA3ed3ccO0oH6xWqJAyOF99gj5MbQmvIZSNOzIf1zsOo6DBQ",
+          "phash_distance": 38,
+          "phash_similarity": 0.4062,
+          "histogram_cosine": 0.3415,
+          "cosine_similarity": 0.2695,
+          "visual_similarity": 0.2695,
+          "candidate_face_detected": true,
+          "candidate_norm": 21.91,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Jaya Naga Vara Prasad Paluri - Infosys | LinkedIn",
+          "source": "LinkedIn",
+          "link": "https://in.linkedin.com/in/jaya-naga-vara-prasad-paluri-209b15301",
+          "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTklu1kd1ewqjAMxEF_AJgDeno6As9bNxk2xYQAZLcMm1Kmfj5q",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTklu1kd1ewqjAMxEF_AJgDeno6As9bNxk2xYQAZLcMm1Kmfj5q",
+          "phash_distance": 36,
+          "phash_similarity": 0.4375,
+          "histogram_cosine": 0.5291,
+          "cosine_similarity": 0.2237,
+          "visual_similarity": 0.2237,
+          "candidate_face_detected": true,
+          "candidate_norm": 23.48,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "MR UMAR - Video Editor Motion Graphics | LinkedIn",
+          "source": "LinkedIn",
+          "link": "https://in.linkedin.com/in/mr-umar-125234299",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS86nvc1qDL-JQUUNzkpawknaIImV_ldY2hHAEwNSCpqSOvBJyc",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS86nvc1qDL-JQUUNzkpawknaIImV_ldY2hHAEwNSCpqSOvBJyc",
+          "phash_distance": 36,
+          "phash_similarity": 0.4375,
+          "histogram_cosine": 0.4384,
+          "cosine_similarity": 0.1844,
+          "visual_similarity": 0.1844,
+          "candidate_face_detected": true,
+          "candidate_norm": 21.74,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": true,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Nimesh Pansuriya - Software Engineer at TatvaSoft | LinkedIn",
+          "source": "LinkedIn",
+          "link": "https://in.linkedin.com/in/nimesh-pansuriya-227b92238",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfozWNTejdPtN220mQOLrW9aavKnPen4CKdoc3AnUsD3phTn59",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfozWNTejdPtN220mQOLrW9aavKnPen4CKdoc3AnUsD3phTn59",
+          "phash_distance": 38,
+          "phash_similarity": 0.4062,
+          "histogram_cosine": 0.4553,
+          "cosine_similarity": 0.1659,
+          "visual_similarity": 0.1659,
+          "candidate_face_detected": true,
+          "candidate_norm": 24.89,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Shivang Yadav - Senior Associate at JPMorgan Chase | CFA ...",
+          "source": "LinkedIn",
+          "link": "https://in.linkedin.com/in/shivang-yadav-a546ba214",
+          "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTAgmcTq3pByUdUOprPvj9LBW9SuNyP0LgfSG2ehElRHPhWjtbj",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTAgmcTq3pByUdUOprPvj9LBW9SuNyP0LgfSG2ehElRHPhWjtbj",
+          "phash_distance": 28,
+          "phash_similarity": 0.5625,
+          "histogram_cosine": 0.2528,
+          "cosine_similarity": 0.1023,
+          "visual_similarity": 0.1023,
+          "candidate_face_detected": true,
+          "candidate_norm": 23.53,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Surya Naidu - Research Assistant at Indian Institute of ...",
+          "source": "LinkedIn",
+          "link": "https://www.linkedin.com/in/surya-naidu-86bb3221b",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRLTahNQI7ETqP4ib8u2SLognjyrVrJN-LfHhBUZzRWKNkPMAPi",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRLTahNQI7ETqP4ib8u2SLognjyrVrJN-LfHhBUZzRWKNkPMAPi",
+          "phash_distance": 36,
+          "phash_similarity": 0.4375,
+          "histogram_cosine": 0.1425,
+          "cosine_similarity": 0.0889,
+          "visual_similarity": 0.0889,
+          "candidate_face_detected": true,
+          "candidate_norm": 22.63,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "VOSAP Igniter Akhil Chamarti shares his experience of ...",
+          "source": "YouTube",
+          "link": "https://www.youtube.com/watch?v=jEyeMn0YCpc",
+          "image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTOz3rzLs3_EZ4hU2mNoZja3zosgjGWvuPStp8LpP2q_U3cF9Nz",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTOz3rzLs3_EZ4hU2mNoZja3zosgjGWvuPStp8LpP2q_U3cF9Nz",
+          "phash_distance": 26,
+          "phash_similarity": 0.5938,
+          "histogram_cosine": 0.6831,
+          "cosine_similarity": 0.0797,
+          "visual_similarity": 0.0797,
+          "candidate_face_detected": true,
+          "candidate_norm": 26.12,
+          "verified": false,
+          "social_meta": {
+            "platform": "YouTube",
+            "is_specific_post": true,
+            "post_type": "Video",
+            "post_id": "jEyeMn0YCpc",
+            "is_video": true,
+            "trust_score": 0.95
+          }
+        },
+        {
+          "title": "Anston Jedidiah S - Second-Year Electronics & Communication ...",
+          "source": "LinkedIn",
+          "link": "https://in.linkedin.com/in/anston-jedidiah-s",
+          "image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS9kJO1L9Z_x0p-mMK_fLujvgwqp0PtiAou6jo7jRLfWznSbcDS",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS9kJO1L9Z_x0p-mMK_fLujvgwqp0PtiAou6jo7jRLfWznSbcDS",
+          "phash_distance": 28,
+          "phash_similarity": 0.5625,
+          "histogram_cosine": 0.4207,
+          "cosine_similarity": 0.0654,
+          "visual_similarity": 0.0654,
+          "candidate_face_detected": true,
+          "candidate_norm": 22.71,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Devansh Aggarwal - Graduate in Bachelor of Computer ...",
+          "source": "LinkedIn",
+          "link": "https://in.linkedin.com/in/devansh-aggarwal-04b28423a",
+          "image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTiPlBOTLRcyb764WjULYAv90fCXRi6D4se9nCJASKCxVH9N447",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTiPlBOTLRcyb764WjULYAv90fCXRi6D4se9nCJASKCxVH9N447",
+          "phash_distance": 40,
+          "phash_similarity": 0.375,
+          "histogram_cosine": 0.4518,
+          "cosine_similarity": 0.0492,
+          "visual_similarity": 0.0492,
+          "candidate_face_detected": true,
+          "candidate_norm": 21.96,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Alex Richard - -- | LinkedIn",
+          "source": "LinkedIn",
+          "link": "https://in.linkedin.com/in/alex-richard-997522238",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRjYwdFPhVaRGVODEgvoVNaSCJOcUNjpcS8oyMW79TTIWjkZD-o",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRjYwdFPhVaRGVODEgvoVNaSCJOcUNjpcS8oyMW79TTIWjkZD-o",
+          "phash_distance": 32,
+          "phash_similarity": 0.5,
+          "histogram_cosine": 0.3281,
+          "cosine_similarity": 0.0457,
+          "visual_similarity": 0.0457,
+          "candidate_face_detected": true,
+          "candidate_norm": 24.52,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        }
+      ],
+      "report_path": "results\\webcam_7d719d45_report.json"
+    },
+    "previous_hash": "dd77da495feae67301ff135d8d1475e1e98888522f7e0c152ff6d49e30e9f61e",
+    "hash": "524fdfd3e251f618ff33135dda3770cac59184a1613e9e3234f6b50d9744871b"
+  },
+  {
+    "index": 4,
+    "timestamp": 1788762618.321109,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T06:30:18.310222+00:00",
+      "source_image": {
+        "filename": "webcam_21bad193.jpg",
+        "sha256": "49c9e7591c202102f7b161497e6b6d81698ceadd3c462f124a88cfaddf48c97d",
+        "phash": "c9f0b48ee8d98936"
+      },
+      "image": {
+        "filename": "webcam_21bad193.jpg",
+        "sha256": "49c9e7591c202102f7b161497e6b6d81698ceadd3c462f124a88cfaddf48c97d",
+        "phash": "c9f0b48ee8d98936"
+      },
+      "biometrics": {
+        "detected": true,
+        "face_count": 3,
+        "embedding_model": "ArcFace 512-d (buffalo_l)",
+        "embedding_persistent": false,
+        "det_score": 0.8772852420806885,
+        "face_boxes": [
+          [
+            520.1446533203125,
+            353.36761474609375,
+            671.7232055664062,
+            547.7220458984375
+          ],
+          [
+            1162.86474609375,
+            550.4884033203125,
+            1198.265380859375,
+            584.3963012695312
+          ],
+          [
+            41.573116302490234,
+            531.4190673828125,
+            70.04283142089844,
+            569.1278076171875
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              558.904541015625,
+              420.5101623535156
+            ],
+            [
+              631.8976440429688,
+              418.3986511230469
+            ],
+            [
+              595.2168579101562,
+              452.4977111816406
+            ],
+            [
+              562.0198974609375,
+              493.08837890625
+            ],
+            [
+              625.7298583984375,
+              491.83233642578125
+            ]
+          ],
+          [
+            [
+              1168.2764892578125,
+              566.4017333984375
+            ],
+            [
+              1178.4718017578125,
+              564.7550659179688
+            ],
+            [
+              1171.9869384765625,
+              575.4622192382812
+            ],
+            [
+              1176.2366943359375,
+              579.5419311523438
+            ],
+            [
+              1182.5013427734375,
+              577.9540405273438
+            ]
+          ],
+          [
+            [
+              45.831764221191406,
+              544.799560546875
+            ],
+            [
+              48.60767364501953,
+              544.9122924804688
+            ],
+            [
+              43.34944152832031,
+              554.0167846679688
+            ],
+            [
+              51.0982780456543,
+              560.4274291992188
+            ],
+            [
+              52.62710189819336,
+              560.065185546875
+            ]
+          ]
+        ]
+      },
+      "face": {
+        "detected": true,
+        "count": 3,
+        "embedding_generated": true,
+        "det_score": 0.8772852420806885,
+        "face_boxes": [
+          [
+            520.1446533203125,
+            353.36761474609375,
+            671.7232055664062,
+            547.7220458984375
+          ],
+          [
+            1162.86474609375,
+            550.4884033203125,
+            1198.265380859375,
+            584.3963012695312
+          ],
+          [
+            41.573116302490234,
+            531.4190673828125,
+            70.04283142089844,
+            569.1278076171875
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              558.904541015625,
+              420.5101623535156
+            ],
+            [
+              631.8976440429688,
+              418.3986511230469
+            ],
+            [
+              595.2168579101562,
+              452.4977111816406
+            ],
+            [
+              562.0198974609375,
+              493.08837890625
+            ],
+            [
+              625.7298583984375,
+              491.83233642578125
+            ]
+          ],
+          [
+            [
+              1168.2764892578125,
+              566.4017333984375
+            ],
+            [
+              1178.4718017578125,
+              564.7550659179688
+            ],
+            [
+              1171.9869384765625,
+              575.4622192382812
+            ],
+            [
+              1176.2366943359375,
+              579.5419311523438
+            ],
+            [
+              1182.5013427734375,
+              577.9540405273438
+            ]
+          ],
+          [
+            [
+              45.831764221191406,
+              544.799560546875
+            ],
+            [
+              48.60767364501953,
+              544.9122924804688
+            ],
+            [
+              43.34944152832031,
+              554.0167846679688
+            ],
+            [
+              51.0982780456543,
+              560.4274291992188
+            ],
+            [
+              52.62710189819336,
+              560.065185546875
+            ]
+          ]
+        ]
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 10,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 10,
+        "error": null
+      },
+      "best_match": {
+        "title": "Jason Charwin - Data Science @ UNC | Prev @ Wells Fargo ...",
+        "source": "LinkedIn",
+        "link": "https://www.linkedin.com/in/jasoncharwin05",
+        "platform": "LinkedIn",
+        "is_specific_post": false,
+        "post_type": "Generic Portal / Aggregator",
+        "cosine_similarity": 0.2439,
+        "visual_similarity": 0.2439,
+        "phash_distance": 36,
+        "verified": false
+      },
+      "deepfake_analysis": {
+        "label": "Authentic / Real",
+        "risk_score": 0.05,
+        "confidence": 0.9,
+        "is_synthetic": false,
+        "model": "Spatial-FFT-Heuristic (Offline Fallback)",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "NO_CONFIRMED_MATCH",
+        "best_similarity": 0.2439,
+        "threshold": 0.9,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "81ba475054400db32fcd6c8274dade223541f87feef321e299f04db903a521d0",
+      "blockchain_layer1": {
+        "block_index": 4,
+        "block_hash": "b8f5e20eab1063a791b12412b6f57200217e7b1a783ab529459dbf4887c46d43",
+        "previous_hash": "524fdfd3e251f618ff33135dda3770cac59184a1613e9e3234f6b50d9744871b",
+        "verified": false
+      },
+      "blockchain_layer2": {
+        "submitted": true,
+        "network": "Ethereum Sepolia Testnet",
+        "chain_id": 11155111,
+        "tx_hash": "0x42771af01bbf478729992301b55dbf87cc15a2cfa04e50425f5344460cb635ba",
+        "block_number": 11652438,
+        "explorer_url": "https://sepolia.etherscan.io/tx/0x42771af01bbf478729992301b55dbf87cc15a2cfa04e50425f5344460cb635ba"
+      },
+      "blockchain": {
+        "submitted": true,
+        "network": "Ethereum Sepolia Testnet",
+        "chain_id": 11155111,
+        "tx_hash": "0x42771af01bbf478729992301b55dbf87cc15a2cfa04e50425f5344460cb635ba",
+        "block_number": 11652438,
+        "explorer_url": "https://sepolia.etherscan.io/tx/0x42771af01bbf478729992301b55dbf87cc15a2cfa04e50425f5344460cb635ba"
+      },
+      "matches": [
+        {
+          "title": "Jason Charwin - Data Science @ UNC | Prev @ Wells Fargo ...",
+          "source": "LinkedIn",
+          "link": "https://www.linkedin.com/in/jasoncharwin05",
+          "image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSTQ4kbjOHNDGrJ4imi-wLzqNsyhOfKDbnpqKz2NgvbYy_HM-Mi",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSTQ4kbjOHNDGrJ4imi-wLzqNsyhOfKDbnpqKz2NgvbYy_HM-Mi",
+          "phash_distance": 36,
+          "phash_similarity": 0.4375,
+          "histogram_cosine": 0.6543,
+          "cosine_similarity": 0.2439,
+          "visual_similarity": 0.2439,
+          "candidate_face_detected": true,
+          "candidate_norm": 23.35,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "The NEXT BIG THING in 2025 🤯 - YouTube",
+          "source": "YouTube",
+          "link": "https://www.youtube.com/shorts/Urx40zOuMtU",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTWu-zg-Fm_9BBA7rfaIJPTrF9Dj2er-jL86PvDbshaJj9g5QI7",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTWu-zg-Fm_9BBA7rfaIJPTrF9Dj2er-jL86PvDbshaJj9g5QI7",
+          "phash_distance": 30,
+          "phash_similarity": 0.5312,
+          "histogram_cosine": 0.798,
+          "cosine_similarity": 0.2281,
+          "visual_similarity": 0.2281,
+          "candidate_face_detected": true,
+          "candidate_norm": 22.59,
+          "verified": false,
+          "social_meta": {
+            "platform": "YouTube",
+            "is_specific_post": true,
+            "post_type": "Short",
+            "post_id": "Urx40zOuMtU",
+            "is_video": true,
+            "trust_score": 0.95
+          }
+        },
+        {
+          "title": "Dev Kunjadia on X: \"&gt; Run with a friend &gt; Assault bike ...",
+          "source": "x.com",
+          "link": "https://x.com/dev_kunjadia/status/2095402892777926760",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ITfPbd91L6MsoqPBL0sV6sMp6VHiTQXcfW98mXvwQ_Hh5Sdz",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ITfPbd91L6MsoqPBL0sV6sMp6VHiTQXcfW98mXvwQ_Hh5Sdz",
+          "phash_distance": 28,
+          "phash_similarity": 0.5625,
+          "histogram_cosine": 0.4171,
+          "cosine_similarity": 0.1844,
+          "visual_similarity": 0.1844,
+          "candidate_face_detected": true,
+          "candidate_norm": 24.88,
+          "verified": false,
+          "social_meta": {
+            "platform": "X / Twitter",
+            "is_specific_post": true,
+            "post_type": "Status",
+            "post_id": "2095402892777926760",
+            "is_video": false,
+            "trust_score": 0.95
+          }
+        },
+        {
+          "title": "Happy to share that I've joined Escape Plan as a Founder's ...",
+          "source": "LinkedIn",
+          "link": "https://www.linkedin.com/posts/jatinaryan_happy-to-share-that-ive-joined-escape-plan-activity-7472602068562935808-rgmD",
+          "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSJX_gp84IdYOE1Bfub55JILcS97CssYLMsSy_1MHfz2XwwBhIh",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSJX_gp84IdYOE1Bfub55JILcS97CssYLMsSy_1MHfz2XwwBhIh",
+          "phash_distance": 30,
+          "phash_similarity": 0.5312,
+          "histogram_cosine": 0.6146,
+          "cosine_similarity": 0.1609,
+          "visual_similarity": 0.1609,
+          "candidate_face_detected": true,
+          "candidate_norm": 22.89,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Sadkrith Malladi - CS+BIOE @ UIUC | USCF National Master ...",
+          "source": "LinkedIn",
+          "link": "https://www.linkedin.com/in/sadkrith-malladi-991551311",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYrSlXR4mNYgJO2BTRmVnJfN8UxD43-zLL080OpUN5vdpA_FTt",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYrSlXR4mNYgJO2BTRmVnJfN8UxD43-zLL080OpUN5vdpA_FTt",
+          "phash_distance": 28,
+          "phash_similarity": 0.5625,
+          "histogram_cosine": 0.4996,
+          "cosine_similarity": 0.1279,
+          "visual_similarity": 0.1279,
+          "candidate_face_detected": true,
+          "candidate_norm": 23.09,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Model UN Officers",
+          "source": "YMCA Civic Engagement",
+          "link": "https://www.gpyce.org/mun-officers",
+          "image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSMXq8f8t1ICEx9pMZyYUc-o51f8EHtosl3LwaZ92Ugi-KFyn2j",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSMXq8f8t1ICEx9pMZyYUc-o51f8EHtosl3LwaZ92Ugi-KFyn2j",
+          "phash_distance": 22,
+          "phash_similarity": 0.6562,
+          "histogram_cosine": 0.7541,
+          "cosine_similarity": 0.1188,
+          "visual_similarity": 0.1188,
+          "candidate_face_detected": true,
+          "candidate_norm": 25.41,
+          "verified": false,
+          "social_meta": {
+            "platform": "gpyce.org",
+            "is_specific_post": false,
+            "post_type": "Web Article / Forum",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.35
+          }
+        },
+        {
+          "title": "Rishi A. Kumar, Author at Fair Observer",
+          "source": "Fair Observer",
+          "link": "https://www.fairobserver.com/author/rishi-a-kumar/",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRY-zHHlgU2dKnTGpJbihPNL7UTuG8dnCZvd_3DnfT1Efz-ze5V",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRY-zHHlgU2dKnTGpJbihPNL7UTuG8dnCZvd_3DnfT1Efz-ze5V",
+          "phash_distance": 30,
+          "phash_similarity": 0.5312,
+          "histogram_cosine": 0.6954,
+          "cosine_similarity": 0.1183,
+          "visual_similarity": 0.1183,
+          "candidate_face_detected": true,
+          "candidate_norm": 22.65,
+          "verified": false,
+          "social_meta": {
+            "platform": "fairobserver.com",
+            "is_specific_post": false,
+            "post_type": "Web Article / Forum",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.35
+          }
+        },
+        {
+          "title": "Mayank Sharma | National Law University Delhi",
+          "source": "Millennium Fellowship",
+          "link": "https://www.millenniumfellows.org/fellow/2023/nlud/mayank-sharma",
+          "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT1OQ_Ie9GJredqktBvbL0jF75FMzpZXu2JIb501QVaw5Z-tNdM",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT1OQ_Ie9GJredqktBvbL0jF75FMzpZXu2JIb501QVaw5Z-tNdM",
+          "phash_distance": 32,
+          "phash_similarity": 0.5,
+          "histogram_cosine": 0.6974,
+          "cosine_similarity": 0.0907,
+          "visual_similarity": 0.0907,
+          "candidate_face_detected": true,
+          "candidate_norm": 22.02,
+          "verified": false,
+          "social_meta": {
+            "platform": "millenniumfellows.org",
+            "is_specific_post": false,
+            "post_type": "Web Article / Forum",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.35
+          }
+        },
+        {
+          "title": "Honoured to adjudicate prelims and quarter-finals of ...",
+          "source": "Instagram",
+          "link": "https://www.instagram.com/reel/DM-Q5dxtZQX/",
+          "image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQd7bmZpXFXTgGdM451y-kFePfAzbh6EtAsYGTfkBKfu0sNbLnG",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQd7bmZpXFXTgGdM451y-kFePfAzbh6EtAsYGTfkBKfu0sNbLnG",
+          "phash_distance": 38,
+          "phash_similarity": 0.4062,
+          "histogram_cosine": 0.4951,
+          "cosine_similarity": 0.0364,
+          "visual_similarity": 0.0364,
+          "candidate_face_detected": true,
+          "candidate_norm": 24.03,
+          "verified": false,
+          "social_meta": {
+            "platform": "Instagram",
+            "is_specific_post": true,
+            "post_type": "Reel",
+            "post_id": "DM-Q5dxtZQX",
+            "is_video": true,
+            "trust_score": 0.95
+          }
+        },
+        {
+          "title": "Toppers Speak - The Brigade Schools, whitefield",
+          "source": "The Brigade Schools",
+          "link": "https://www.brigadeschools.edu.in/the-brigade-school-whitefield/toppers-speak/",
+          "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRr7agMeVPXS4ZcXbNLZsDrnhzanv4IZ5EsLRsdhlnldFI-AqKM",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRr7agMeVPXS4ZcXbNLZsDrnhzanv4IZ5EsLRsdhlnldFI-AqKM",
+          "phash_distance": 28,
+          "phash_similarity": 0.5625,
+          "histogram_cosine": 0.6334,
+          "cosine_similarity": 0.0345,
+          "visual_similarity": 0.0345,
+          "candidate_face_detected": true,
+          "candidate_norm": 23.08,
+          "verified": false,
+          "social_meta": {
+            "platform": "brigadeschools.edu.in",
+            "is_specific_post": false,
+            "post_type": "Web Article / Forum",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.35
+          }
+        }
+      ],
+      "report_path": "results\\webcam_21bad193_report.json"
+    },
+    "previous_hash": "524fdfd3e251f618ff33135dda3770cac59184a1613e9e3234f6b50d9744871b",
+    "hash": "b8f5e20eab1063a791b12412b6f57200217e7b1a783ab529459dbf4887c46d43"
+  },
+  {
+    "index": 5,
+    "timestamp": 1788762982.6165538,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T06:36:22.615879+00:00",
+      "source_image": {
+        "filename": "upload_2bdb93bd.png",
+        "sha256": "b514aaaf24f656d850c3737797e6e27105007bc59b08dce904e468f16aa4efc2",
+        "phash": "e83c49a4e5d3a4d5"
+      },
+      "image": {
+        "filename": "upload_2bdb93bd.png",
+        "sha256": "b514aaaf24f656d850c3737797e6e27105007bc59b08dce904e468f16aa4efc2",
+        "phash": "e83c49a4e5d3a4d5"
+      },
+      "biometrics": {
+        "detected": true,
+        "face_count": 1,
+        "embedding_model": "ArcFace 512-d (buffalo_l)",
+        "embedding_persistent": false,
+        "det_score": 0.8952907919883728,
+        "face_boxes": [
+          [
+            87.95404815673828,
+            82.72099304199219,
+            259.51129150390625,
+            303.2624206542969
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              135.182373046875,
+              162.94725036621094
+            ],
+            [
+              216.0088348388672,
+              169.97267150878906
+            ],
+            [
+              172.67123413085938,
+              200.92874145507812
+            ],
+            [
+              132.53768920898438,
+              239.15292358398438
+            ],
+            [
+              205.1303253173828,
+              245.82679748535156
+            ]
+          ]
+        ]
+      },
+      "face": {
+        "detected": true,
+        "count": 1,
+        "embedding_generated": true,
+        "det_score": 0.8952907919883728,
+        "face_boxes": [
+          [
+            87.95404815673828,
+            82.72099304199219,
+            259.51129150390625,
+            303.2624206542969
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              135.182373046875,
+              162.94725036621094
+            ],
+            [
+              216.0088348388672,
+              169.97267150878906
+            ],
+            [
+              172.67123413085938,
+              200.92874145507812
+            ],
+            [
+              132.53768920898438,
+              239.15292358398438
+            ],
+            [
+              205.1303253173828,
+              245.82679748535156
+            ]
+          ]
+        ]
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 10,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 10,
+        "error": null
+      },
+      "best_match": {
+        "title": "About Us | Edunomix Institute",
+        "source": "Edunomix Institute",
+        "link": "https://edunomixinstitute.com/about-us",
+        "platform": "edunomixinstitute.com",
+        "is_specific_post": false,
+        "post_type": "Web Article / Forum",
+        "cosine_similarity": 0.2355,
+        "visual_similarity": 0.2355,
+        "phash_distance": 28,
+        "verified": false
+      },
+      "deepfake_analysis": {
+        "label": "Authentic / Real",
+        "risk_score": 0.05,
+        "confidence": 0.9,
+        "is_synthetic": false,
+        "model": "Spatial-FFT-Heuristic (Offline Fallback)",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "NO_CONFIRMED_MATCH",
+        "best_similarity": 0.2355,
+        "threshold": 0.9,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "3715d76c6e7fc028c8de329502a032c93c720f21e1618debedf66b2ae37ebb2c",
+      "blockchain_layer1": {
+        "block_index": 5,
+        "block_hash": "131fc59feed66a9cb4936130e285ec4095e818ea3af41b5ddd99db94f5552507",
+        "previous_hash": "b8f5e20eab1063a791b12412b6f57200217e7b1a783ab529459dbf4887c46d43",
+        "verified": false
+      },
+      "blockchain_layer2": {
+        "submitted": false,
+        "network": "Ethereum Sepolia Testnet",
+        "tx_hash": null,
+        "explorer_url": null,
+        "reason": "Skipped (no-blockchain flag or unconfigured wallet)"
+      },
+      "blockchain": {
+        "submitted": false,
+        "network": "Ethereum Sepolia Testnet",
+        "tx_hash": null,
+        "explorer_url": null,
+        "reason": "Skipped (no-blockchain flag or unconfigured wallet)"
+      },
+      "matches": [
+        {
+          "title": "About Us | Edunomix Institute",
+          "source": "Edunomix Institute",
+          "link": "https://edunomixinstitute.com/about-us",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQwRP4grQaEiB3KrFBS89I14F8et38qMkjFGmeqFP1sRRBNfwhT",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQwRP4grQaEiB3KrFBS89I14F8et38qMkjFGmeqFP1sRRBNfwhT",
+          "phash_distance": 28,
+          "phash_similarity": 0.5625,
+          "histogram_cosine": 0.4484,
+          "cosine_similarity": 0.2355,
+          "visual_similarity": 0.2355,
+          "candidate_face_detected": true,
+          "candidate_norm": 21.73,
+          "verified": false,
+          "social_meta": {
+            "platform": "edunomixinstitute.com",
+            "is_specific_post": false,
+            "post_type": "Web Article / Forum",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.35
+          }
+        },
+        {
+          "title": "Nipun Singhi - Founder at Jainova Wealth Private Limited ...",
+          "source": "LinkedIn",
+          "link": "https://in.linkedin.com/in/nipun-singhi-87b0a7192",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS2j3ka1A8Nka_-Lu-b5Xs8RHcdS3rNFlOlNzE11jAn1vQ7OQrQ",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS2j3ka1A8Nka_-Lu-b5Xs8RHcdS3rNFlOlNzE11jAn1vQ7OQrQ",
+          "phash_distance": 26,
+          "phash_similarity": 0.5938,
+          "histogram_cosine": 0.4003,
+          "cosine_similarity": 0.1989,
+          "visual_similarity": 0.1989,
+          "candidate_face_detected": true,
+          "candidate_norm": 22.26,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Usheel Gobind - Student at the University of KwaZulu Natal ...",
+          "source": "LinkedIn",
+          "link": "https://za.linkedin.com/in/usheel-gobind-0a1261161",
+          "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS-mislnJeOcIklWQbWQf0w4iHOXd2h7dZGjviMPNTE-aMTBG8f",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS-mislnJeOcIklWQbWQf0w4iHOXd2h7dZGjviMPNTE-aMTBG8f",
+          "phash_distance": 32,
+          "phash_similarity": 0.5,
+          "histogram_cosine": 0.5021,
+          "cosine_similarity": 0.1959,
+          "visual_similarity": 0.1959,
+          "candidate_face_detected": true,
+          "candidate_norm": 22.55,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Abhishek Satpathy - CS @ UVA | Prev. @ Google, CMU, Voltus ...",
+          "source": "LinkedIn",
+          "link": "https://www.linkedin.com/in/abhi-satpathy",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRYF7AvE4euHjlqCWwOyZkXF5bnK-3phWKFNycd-McOtV7mVoyI",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRYF7AvE4euHjlqCWwOyZkXF5bnK-3phWKFNycd-McOtV7mVoyI",
+          "phash_distance": 36,
+          "phash_similarity": 0.4375,
+          "histogram_cosine": 0.7271,
+          "cosine_similarity": 0.1959,
+          "visual_similarity": 0.1959,
+          "candidate_face_detected": true,
+          "candidate_norm": 22.44,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Vishnu Yella | Kaelin Lab at Dana-Farber Cancer Institute at ...",
+          "source": "Labs at Dana-Farber Cancer Institute",
+          "link": "https://labs.dana-farber.org/kaelinlab/people/vishnu-yella",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSv4g2sJOa1IZQuwSAHKy8c7tudqPJVpt-JXEQli7lNEe43YkrG",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSv4g2sJOa1IZQuwSAHKy8c7tudqPJVpt-JXEQli7lNEe43YkrG",
+          "phash_distance": 30,
+          "phash_similarity": 0.5312,
+          "histogram_cosine": 0.5978,
+          "cosine_similarity": 0.1517,
+          "visual_similarity": 0.1517,
+          "candidate_face_detected": true,
+          "candidate_norm": 22.01,
+          "verified": false,
+          "social_meta": {
+            "platform": "labs.dana-farber.org",
+            "is_specific_post": false,
+            "post_type": "Web Article / Forum",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.35
+          }
+        },
+        {
+          "title": "Devanand B - Student at Bharata Mata College | LinkedIn",
+          "source": "LinkedIn",
+          "link": "https://in.linkedin.com/in/devanand-b-943138420",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnOiAjNdYR39fkppGqJPccI8CIYqAGkVsmONN55tV6GZGPKA2s",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnOiAjNdYR39fkppGqJPccI8CIYqAGkVsmONN55tV6GZGPKA2s",
+          "phash_distance": 22,
+          "phash_similarity": 0.6562,
+          "histogram_cosine": 0.4991,
+          "cosine_similarity": 0.1414,
+          "visual_similarity": 0.1414,
+          "candidate_face_detected": true,
+          "candidate_norm": 20.33,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Thomas Jacob - Joint CMU-Pitt Ph.D. Program in Computational ...",
+          "source": "LinkedIn",
+          "link": "https://www.linkedin.com/in/thomas-jacob-12baa0138",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3X_TOXjmKgXCHGjf19SrLPRxEtObccFPidL9-We13-3y4hnC8",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3X_TOXjmKgXCHGjf19SrLPRxEtObccFPidL9-We13-3y4hnC8",
+          "phash_distance": 24,
+          "phash_similarity": 0.625,
+          "histogram_cosine": 0.665,
+          "cosine_similarity": 0.0893,
+          "visual_similarity": 0.0893,
+          "candidate_face_detected": true,
+          "candidate_norm": 21.0,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Adi Agrawal - Student at Erasmus University Rotterdam | LinkedIn",
+          "source": "LinkedIn",
+          "link": "https://nl.linkedin.com/in/adiagrawal1",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQdhMA1an9fTH7sWOxSX6leu2K6YYW87mHNvNLXkwdmCTLDrDEZ",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQdhMA1an9fTH7sWOxSX6leu2K6YYW87mHNvNLXkwdmCTLDrDEZ",
+          "phash_distance": 32,
+          "phash_similarity": 0.5,
+          "histogram_cosine": 0.353,
+          "cosine_similarity": 0.0722,
+          "visual_similarity": 0.0722,
+          "candidate_face_detected": true,
+          "candidate_norm": 24.14,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        },
+        {
+          "title": "Thomas Jacob",
+          "source": "GitHub Pages",
+          "link": "https://thomas-jac.github.io/",
+          "image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQq-05o6rsMU9zAI9ZQ1rVctwqdWqFD2CeE0417nNdi2Mtc8HW6",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQq-05o6rsMU9zAI9ZQ1rVctwqdWqFD2CeE0417nNdi2Mtc8HW6",
+          "phash_distance": 26,
+          "phash_similarity": 0.5938,
+          "histogram_cosine": 0.669,
+          "cosine_similarity": 0.072,
+          "visual_similarity": 0.072,
+          "candidate_face_detected": true,
+          "candidate_norm": 21.02,
+          "verified": false,
+          "social_meta": {
+            "platform": "thomas-jac.github.io",
+            "is_specific_post": false,
+            "post_type": "Web Article / Forum",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.35
+          }
+        },
+        {
+          "title": "Mihir Pullakhandam - Computer Science @ University of ...",
+          "source": "LinkedIn",
+          "link": "https://ca.linkedin.com/in/mihir-pullakhandam-723185198",
+          "image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTvrrbxDA_R9cH4r_HSFbudvJsciEo_Rttpkr22tewc-F0BgblR",
+          "search_engine": "Google Lens via SerpApi",
+          "candidate_image_url": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTvrrbxDA_R9cH4r_HSFbudvJsciEo_Rttpkr22tewc-F0BgblR",
+          "phash_distance": 28,
+          "phash_similarity": 0.5625,
+          "histogram_cosine": 0.3273,
+          "cosine_similarity": 0.0716,
+          "visual_similarity": 0.0716,
+          "candidate_face_detected": true,
+          "candidate_norm": 24.35,
+          "verified": false,
+          "social_meta": {
+            "platform": "LinkedIn",
+            "is_specific_post": false,
+            "post_type": "Generic Portal / Aggregator",
+            "post_id": null,
+            "is_video": false,
+            "trust_score": 0.5
+          }
+        }
+      ],
+      "report_path": "results\\upload_2bdb93bd_report.json"
+    },
+    "previous_hash": "b8f5e20eab1063a791b12412b6f57200217e7b1a783ab529459dbf4887c46d43",
+    "hash": "131fc59feed66a9cb4936130e285ec4095e818ea3af41b5ddd99db94f5552507"
+  },
+  {
+    "index": 6,
+    "timestamp": 1788763094.4854052,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T06:38:14.482176+00:00",
+      "source_image": {
+        "filename": "upload_f936cd38.png",
+        "sha256": "572cd26d8b38a263bee93ee458081bafc6b7c84355069e7b96f87c669a14a4e4",
+        "phash": "ba6564638693ec9c"
+      },
+      "image": {
+        "filename": "upload_f936cd38.png",
+        "sha256": "572cd26d8b38a263bee93ee458081bafc6b7c84355069e7b96f87c669a14a4e4",
+        "phash": "ba6564638693ec9c"
+      },
+      "biometrics": {
+        "detected": true,
+        "face_count": 1,
+        "embedding_model": "ArcFace 512-d (buffalo_l)",
+        "embedding_persistent": false,
+        "det_score": 0.9038841724395752,
+        "face_boxes": [
+          [
+            80.0684814453125,
+            51.27796936035156,
+            207.31980895996094,
+            214.8474578857422
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              115.04418182373047,
+              116.99591827392578
+            ],
+            [
+              174.9100799560547,
+              117.15668487548828
+            ],
+            [
+              144.4901885986328,
+              139.67910766601562
+            ],
+            [
+              119.04249572753906,
+              171.95364379882812
+            ],
+            [
+              168.63946533203125,
+              172.24339294433594
+            ]
+          ]
+        ]
+      },
+      "face": {
+        "detected": true,
+        "count": 1,
+        "embedding_generated": true,
+        "det_score": 0.9038841724395752,
+        "face_boxes": [
+          [
+            80.0684814453125,
+            51.27796936035156,
+            207.31980895996094,
+            214.8474578857422
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              115.04418182373047,
+              116.99591827392578
+            ],
+            [
+              174.9100799560547,
+              117.15668487548828
+            ],
+            [
+              144.4901885986328,
+              139.67910766601562
+            ],
+            [
+              119.04249572753906,
+              171.95364379882812
+            ],
+            [
+              168.63946533203125,
+              172.24339294433594
+            ]
+          ]
+        ]
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 10,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 10,
+        "error": null
+      },
+      "best_match": {
+        "title": "Virat Kohli - The Leader (@leadervirat) • Facebook",
+        "source": "Facebook",
+        "link": "https://www.facebook.com/leadervirat/",
+        "platform": "Facebook",
+        "is_specific_post": false,
+        "post_type": "Generic Portal / Aggregator",
+        "cosine_similarity": 0.9671,
+        "visual_similarity": 0.9671,
+        "phash_distance": 10,
+        "verified": true
+      },
+      "deepfake_analysis": {
+        "label": "Authentic / Real",
+        "risk_score": 0.05,
+        "confidence": 0.9,
+        "is_synthetic": false,
+        "model": "Spatial-FFT-Heuristic (Offline Fallback)",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "VERIFIED",
+        "best_similarity": 0.9671,
+        "threshold": 0.9,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "00c173c6ff8a449b9b45ba253a5933f291841bd5f6c0e8de1e9f3e73bb581e39"
+    },
+    "previous_hash": "131fc59feed66a9cb4936130e285ec4095e818ea3af41b5ddd99db94f5552507",
+    "hash": "bde42c0e04ff1b718b84923b1f846cfa1ca6c07a72f40f3adff5b75f8b5bd199"
   }
 ]

@@ -406,7 +406,7 @@ FaceID/
 │   └── static/                 # Forensic Web Terminal Assets
 │       ├── index.html          # FaceID biometric terminal web dashboard
 │       ├── styles.css          # Terminal UI stylesheet
-│       └── app.js              # Client-side webcam capture & async verification handling
+│       └── app.js              # Client-side UI controller & async verification handling
 │
 ├── chain/                      # Layer 1 Blockchain Storage
 │   └── blockchain.json         # Cryptographic local block records and hash chain
@@ -415,7 +415,7 @@ FaceID/
 │   └── ProvenanceRegistry.sol  # Solidity smart contract for on-chain identity anchor registry
 │
 ├── data/                       # Local Working Directories
-│   ├── input/                  # Input test portraits and webcam captures
+│   ├── input/                  # Input test portraits and probe images
 │   └── candidates/             # Cached candidate images downloaded during OSINT search
 │
 ├── results/                    # Forensic Evidence Reports

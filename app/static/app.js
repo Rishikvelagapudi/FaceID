@@ -2,16 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // UI Element References
-    const btnModeSingle = document.getElementById('btn-mode-single');
-    const btnModeWebcam = document.getElementById('btn-mode-webcam');
     const fileInput = document.getElementById('file-input');
     const previewContainer = document.getElementById('preview-container');
     const canvasOverlay = document.getElementById('canvas-overlay');
     const targetGraphic = document.getElementById('target-graphic');
-    const webcamContainer = document.getElementById('webcam-container');
-    const webcamVideo = document.getElementById('webcam-video');
-    const webcamCanvas = document.getElementById('webcam-canvas');
-    const btnSnap = document.getElementById('btn-snap');
     const btnVerify = document.getElementById('btn-verify');
     const verifySpinner = document.getElementById('verify-spinner');
     const verifyText = document.getElementById('verify-text');
@@ -41,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // State
     let selectedFile = null;
     let base64Snapshot = null;
-    let webcamStream = null;
     let currentImageElement = null;
 
     // Timer Update
@@ -49,28 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const now = new Date();
         logTime.textContent = now.toTimeString().split(' ')[0];
     }, 1000);
-
-    // Mode Toggle
-    btnModeSingle.addEventListener('click', () => {
-        btnModeSingle.className = 'px-3 py-1 font-bold bg-black text-white transition-all';
-        btnModeWebcam.className = 'px-3 py-1 font-bold text-slate-800 hover:bg-slate-200 transition-all';
-
-        if (previewContainer.classList.contains('hidden')) {
-            targetGraphic.classList.remove('hidden');
-        }
-        webcamContainer.classList.add('hidden');
-        stopWebcam();
-    });
-
-    btnModeWebcam.addEventListener('click', async () => {
-        btnModeWebcam.className = 'px-3 py-1 font-bold bg-black text-white transition-all';
-        btnModeSingle.className = 'px-3 py-1 font-bold text-slate-800 hover:bg-slate-200 transition-all';
-
-        targetGraphic.classList.add('hidden');
-        previewContainer.classList.add('hidden');
-        webcamContainer.classList.remove('hidden');
-        startWebcam();
-    });
 
     // File Upload Handlers
     targetGraphic.addEventListener('click', () => fileInput.click());
@@ -135,58 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Webcam Controls
-    async function startWebcam() {
-        try {
-            webcamStream = await navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 } });
-            webcamVideo.srcObject = webcamStream;
-            logLine.textContent = '> WEBCAM LIVE STREAM ACTIVE.';
-        } catch (err) {
-            console.error(err);
-            logLine.textContent = '> WEBCAM ACCESS DENIED OR UNAVAILABLE.';
-            alert('Unable to access webcam. Please check camera permissions.');
-        }
-    }
-
-    function stopWebcam() {
-        if (webcamStream) {
-            webcamStream.getTracks().forEach(track => track.stop());
-            webcamStream = null;
-        }
-    }
-
-    btnSnap.addEventListener('click', () => {
-        if (!webcamVideo.videoWidth) return;
-        webcamCanvas.width = webcamVideo.videoWidth;
-        webcamCanvas.height = webcamVideo.videoHeight;
-        const ctx = webcamCanvas.getContext('2d');
-        ctx.drawImage(webcamVideo, 0, 0);
-
-        base64Snapshot = webcamCanvas.toDataURL('image/jpeg', 0.95);
-        selectedFile = null;
-        displayPreview(base64Snapshot);
-
-        btnModeSingle.click();
-        logLine.textContent = '> FACIAL FRAME CAPTURED FROM WEBCAM STREAM.';
-    });
-
     // Verification Pipeline Execution
     btnVerify.addEventListener('click', async () => {
-        // Auto snapshot webcam frame if active
-        if (!selectedFile && !base64Snapshot && webcamVideo.videoWidth) {
-            webcamCanvas.width = webcamVideo.videoWidth;
-            webcamCanvas.height = webcamVideo.videoHeight;
-            const ctx = webcamCanvas.getContext('2d');
-            ctx.drawImage(webcamVideo, 0, 0);
-
-            base64Snapshot = webcamCanvas.toDataURL('image/jpeg', 0.95);
-            selectedFile = null;
-            displayPreview(base64Snapshot);
-            btnModeSingle.click();
-        }
-
         if (!selectedFile && !base64Snapshot) {
-            alert('Please select a facial image or capture a webcam photo first.');
+            alert('Please select a facial image first.');
             return;
         }
 
