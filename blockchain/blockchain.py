@@ -73,16 +73,18 @@ class LocalBlockchain:
         """
         Append a new verified forensic record to the local blockchain ledger.
         """
+        import copy
         latest = self.chain[-1]
         index = latest["index"] + 1
         timestamp = time.time()
         prev_hash = latest["hash"]
-        b_hash = compute_block_hash(index, timestamp, prev_hash, evidence_record)
+        sealed_record = copy.deepcopy(evidence_record)
+        b_hash = compute_block_hash(index, timestamp, prev_hash, sealed_record)
 
         block = {
             "index": index,
             "timestamp": timestamp,
-            "evidence_record": evidence_record,
+            "evidence_record": sealed_record,
             "previous_hash": prev_hash,
             "hash": b_hash,
         }

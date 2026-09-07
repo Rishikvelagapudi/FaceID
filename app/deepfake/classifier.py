@@ -32,12 +32,10 @@ class DeepfakeClassifier:
 
             logger.info("Initializing ViT deepfake detector: %s", self.model_name)
             self._processor = AutoImageProcessor.from_pretrained(
-                self.model_name,
-                timeout=15,
+                self.model_name
             )
             self._model = AutoModelForImageClassification.from_pretrained(
-                self.model_name,
-                timeout=15,
+                self.model_name
             )
             self._model.eval()
             self._available = True
