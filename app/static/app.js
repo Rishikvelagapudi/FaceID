@@ -473,17 +473,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const bc = data.blockchain_layer2 || data.blockchain || {};
         const df = data.deepfake_analysis || {};
         const best = data.best_match || {};
+        const tier = (v.confidence_tier || best.confidence_tier || '').replace(/_/g, ' ');
 
         // 1. Status Banner
         if (v.status === 'VERIFIED') {
             seaStatusBadge.textContent = 'PROOF VERIFIED';
             seaStatusBadge.className = 'font-mono text-[10px] font-bold bg-emerald-500 text-black px-2 py-0.5 uppercase tracking-wider';
-            teleStatus.textContent = 'VERIFIED MATCH DETECTED ✓';
+            teleStatus.textContent = tier ? `${tier} ✓` : 'VERIFIED MATCH DETECTED ✓';
             teleStatus.className = 'text-sm font-extrabold text-emerald-400 tracking-wider';
         } else {
             seaStatusBadge.textContent = 'ORIGINAL UNBOUND';
             seaStatusBadge.className = 'font-mono text-[10px] font-bold bg-amber-400 text-black px-2 py-0.5 uppercase tracking-wider';
-            teleStatus.textContent = 'NO CONFIRMED MATCH (LOCAL ORIGINAL)';
+            teleStatus.textContent = tier && tier !== 'NO MATCH' ? `RESULT: ${tier}` : 'NO CONFIRMED MATCH (LOCAL ORIGINAL)';
             teleStatus.className = 'text-sm font-extrabold text-amber-300 tracking-wider';
         }
 
@@ -556,11 +557,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 const pct = (sim * 100).toFixed(1);
                 const platform = m.social_meta?.platform || m.source || 'Visual Match';
                 const isPost = m.social_meta?.is_specific_post ? '★ Social Post' : '';
+                const multiFace = m.candidate_faces_found > 1 ? `👥 ${m.candidate_faces_found} faces` : '';
+                const tier = m.confidence_tier ? m.confidence_tier.replace(/_/g, ' ') : '';
+                const badgeColor = m.verified ? 'text-emerald-300 border-emerald-500/50 bg-emerald-950/60' : 'text-slate-400 border-slate-700 bg-black/40';
                 return `
                     <div class="border border-emerald-500/40 bg-[#0A2D22] p-2 space-y-1">
                         <div class="flex items-center justify-between text-[11px] font-bold text-emerald-300">
                             <span class="truncate max-w-[140px]" title="${m.title || 'Candidate'}">${m.title || platform}</span>
                             <span class="text-amber-300 font-mono">${pct}%</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5 text-[9px]">
+                            ${tier ? `<span class="px-1 py-0.2 border ${badgeColor} uppercase font-mono font-bold">${tier}</span>` : ''}
+                            ${multiFace ? `<span class="text-emerald-400 font-mono">${multiFace}</span>` : ''}
                         </div>
                         <div class="flex items-center justify-between text-[10px]">
                             <a href="${m.link}" target="_blank" class="text-emerald-400 underline block truncate max-w-[130px]">

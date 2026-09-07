@@ -2494,5 +2494,416 @@
     },
     "previous_hash": "7e1f6aaf6c6b8eea93720325aa2c1155451bb5a77fcb8095c8f1f9cdb26426cf",
     "hash": "58388b1370fd4f5d000b28fd70f196670a3e06677d81b53bbecb7504b3c36b73"
+  },
+  {
+    "index": 21,
+    "timestamp": 1788807708.0638444,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T19:01:48.062892+00:00",
+      "source_image": {
+        "filename": "upload_0550fd2c.jpg",
+        "sha256": "25df6ceb0b981cd7a202c4df86ca6dd6be3927e4290ccd365c326449b4784c2b",
+        "phash": "a4344c317391dbcf"
+      },
+      "image": {
+        "filename": "upload_0550fd2c.jpg",
+        "sha256": "25df6ceb0b981cd7a202c4df86ca6dd6be3927e4290ccd365c326449b4784c2b",
+        "phash": "a4344c317391dbcf"
+      },
+      "biometrics": {
+        "detected": true,
+        "face_count": 1,
+        "embedding_model": "ArcFace 512-d (buffalo_s)",
+        "embedding_persistent": false,
+        "det_score": 0.878736138343811,
+        "face_boxes": [
+          [
+            126.5556869506836,
+            86.5880126953125,
+            282.8795166015625,
+            314.6858825683594
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              155.64263916015625,
+              173.31622314453125
+            ],
+            [
+              223.68487548828125,
+              177.9250946044922
+            ],
+            [
+              175.78758239746094,
+              217.8052215576172
+            ],
+            [
+              154.07391357421875,
+              247.13369750976562
+            ],
+            [
+              217.75132751464844,
+              251.3860321044922
+            ]
+          ]
+        ]
+      },
+      "face": {
+        "detected": true,
+        "count": 1,
+        "embedding_generated": true,
+        "det_score": 0.878736138343811,
+        "face_boxes": [
+          [
+            126.5556869506836,
+            86.5880126953125,
+            282.8795166015625,
+            314.6858825683594
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              155.64263916015625,
+              173.31622314453125
+            ],
+            [
+              223.68487548828125,
+              177.9250946044922
+            ],
+            [
+              175.78758239746094,
+              217.8052215576172
+            ],
+            [
+              154.07391357421875,
+              247.13369750976562
+            ],
+            [
+              217.75132751464844,
+              251.3860321044922
+            ]
+          ]
+        ]
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 10,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 10,
+        "error": null
+      },
+      "best_match": {
+        "title": "And still we miss Thala on international grounds ...",
+        "source": "Threads",
+        "link": "https://www.threads.com/@instantbollywood/post/DcDhvSME9rt/and-still-we-miss-thala-on-international-grounds-getty-images-aa-msdhoni-dhoni/",
+        "platform": "threads.com",
+        "is_specific_post": false,
+        "post_type": "Web Article / Forum",
+        "cosine_similarity": 0.9546,
+        "visual_similarity": 0.9546,
+        "phash_distance": 2,
+        "verified": true
+      },
+      "deepfake_analysis": {
+        "label": "Deepfake",
+        "risk_score": 0.8237,
+        "confidence": 0.8237,
+        "is_synthetic": true,
+        "model": "prithivMLmods/Deep-Fake-Detector-v2-Model",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "VERIFIED",
+        "best_similarity": 0.9546,
+        "threshold": 0.45,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "881474e6ce4ed27acc42ef6bac693062973b598478202b75be9d4337d5c1cf12"
+    },
+    "previous_hash": "58388b1370fd4f5d000b28fd70f196670a3e06677d81b53bbecb7504b3c36b73",
+    "hash": "e4fbf55aecca90ef6a823c965a85c13142550eb24d192ec3872e7f37c9a05d9e"
+  },
+  {
+    "index": 22,
+    "timestamp": 1788809587.0910537,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T19:33:07.089586+00:00",
+      "source_image": {
+        "filename": "sample_virat.png",
+        "sha256": "572cd26d8b38a263bee93ee458081bafc6b7c84355069e7b96f87c669a14a4e4",
+        "phash": "ba6564638693ec9c"
+      },
+      "image": {
+        "filename": "sample_virat.png",
+        "sha256": "572cd26d8b38a263bee93ee458081bafc6b7c84355069e7b96f87c669a14a4e4",
+        "phash": "ba6564638693ec9c"
+      },
+      "biometrics": {
+        "detected": true,
+        "face_count": 1,
+        "embedding_model": "ArcFace 512-d (buffalo_s)",
+        "embedding_persistent": false,
+        "det_score": 0.8139598369598389,
+        "face_boxes": [
+          [
+            81.52240753173828,
+            54.658382415771484,
+            206.91400146484375,
+            216.20970153808594
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              116.3984375,
+              120.21934509277344
+            ],
+            [
+              172.7484893798828,
+              118.38001251220703
+            ],
+            [
+              145.92576599121094,
+              138.07342529296875
+            ],
+            [
+              121.50251770019531,
+              175.2083740234375
+            ],
+            [
+              169.1619110107422,
+              173.27871704101562
+            ]
+          ]
+        ]
+      },
+      "face": {
+        "detected": true,
+        "count": 1,
+        "embedding_generated": true,
+        "det_score": 0.8139598369598389,
+        "face_boxes": [
+          [
+            81.52240753173828,
+            54.658382415771484,
+            206.91400146484375,
+            216.20970153808594
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              116.3984375,
+              120.21934509277344
+            ],
+            [
+              172.7484893798828,
+              118.38001251220703
+            ],
+            [
+              145.92576599121094,
+              138.07342529296875
+            ],
+            [
+              121.50251770019531,
+              175.2083740234375
+            ],
+            [
+              169.1619110107422,
+              173.27871704101562
+            ]
+          ]
+        ]
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 3,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 3,
+        "error": null
+      },
+      "best_match": {
+        "title": "Virat Kohli - The Leader (@leadervirat) • Facebook",
+        "source": "Facebook",
+        "link": "https://www.facebook.com/leadervirat/",
+        "platform": "Facebook",
+        "is_specific_post": false,
+        "post_type": "Generic Portal / Aggregator",
+        "cosine_similarity": 0.9763,
+        "visual_similarity": 0.9763,
+        "phash_distance": 10,
+        "confidence_tier": "HIGH_CONFIDENCE_MATCH",
+        "candidate_faces_found": 1,
+        "verified": true
+      },
+      "deepfake_analysis": {
+        "label": "Authentic / Real",
+        "risk_score": 0.05,
+        "confidence": 0.9,
+        "is_synthetic": false,
+        "model": "Spatial-FFT-Heuristic (Offline Fallback)",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "VERIFIED",
+        "confidence_tier": "HIGH_CONFIDENCE_MATCH",
+        "best_similarity": 0.9763,
+        "threshold": 0.45,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "fb53d67091717d55f85b127a5655c388e1a43c5a5cf5c9fcc03333a19326c8b2"
+    },
+    "previous_hash": "e4fbf55aecca90ef6a823c965a85c13142550eb24d192ec3872e7f37c9a05d9e",
+    "hash": "9003ca80f2100a22bc3ca73eaa9191eb30662903d4d68354993cf7b6333cd3ff"
+  },
+  {
+    "index": 23,
+    "timestamp": 1788809694.7914333,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T19:34:54.784567+00:00",
+      "source_image": {
+        "filename": "sample_virat.png",
+        "sha256": "572cd26d8b38a263bee93ee458081bafc6b7c84355069e7b96f87c669a14a4e4",
+        "phash": "ba6564638693ec9c"
+      },
+      "image": {
+        "filename": "sample_virat.png",
+        "sha256": "572cd26d8b38a263bee93ee458081bafc6b7c84355069e7b96f87c669a14a4e4",
+        "phash": "ba6564638693ec9c"
+      },
+      "biometrics": {
+        "detected": true,
+        "face_count": 1,
+        "embedding_model": "ArcFace 512-d (buffalo_s)",
+        "embedding_persistent": false,
+        "det_score": 0.8139598369598389,
+        "face_boxes": [
+          [
+            81.52240753173828,
+            54.658382415771484,
+            206.91400146484375,
+            216.20970153808594
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              116.3984375,
+              120.21934509277344
+            ],
+            [
+              172.7484893798828,
+              118.38001251220703
+            ],
+            [
+              145.92576599121094,
+              138.07342529296875
+            ],
+            [
+              121.50251770019531,
+              175.2083740234375
+            ],
+            [
+              169.1619110107422,
+              173.27871704101562
+            ]
+          ]
+        ]
+      },
+      "face": {
+        "detected": true,
+        "count": 1,
+        "embedding_generated": true,
+        "det_score": 0.8139598369598389,
+        "face_boxes": [
+          [
+            81.52240753173828,
+            54.658382415771484,
+            206.91400146484375,
+            216.20970153808594
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              116.3984375,
+              120.21934509277344
+            ],
+            [
+              172.7484893798828,
+              118.38001251220703
+            ],
+            [
+              145.92576599121094,
+              138.07342529296875
+            ],
+            [
+              121.50251770019531,
+              175.2083740234375
+            ],
+            [
+              169.1619110107422,
+              173.27871704101562
+            ]
+          ]
+        ]
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 3,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 3,
+        "error": null
+      },
+      "best_match": {
+        "title": "Virat Kohli - The Leader (@leadervirat) • Facebook",
+        "source": "Facebook",
+        "link": "https://www.facebook.com/leadervirat/",
+        "platform": "Facebook",
+        "is_specific_post": false,
+        "post_type": "Generic Portal / Aggregator",
+        "cosine_similarity": 0.9763,
+        "visual_similarity": 0.9763,
+        "phash_distance": 10,
+        "confidence_tier": "HIGH_CONFIDENCE_MATCH",
+        "candidate_faces_found": 1,
+        "verified": true
+      },
+      "deepfake_analysis": {
+        "label": "Authentic / Real",
+        "risk_score": 0.05,
+        "confidence": 0.9,
+        "is_synthetic": false,
+        "model": "Spatial-FFT-Heuristic (Offline Fallback)",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "VERIFIED",
+        "confidence_tier": "HIGH_CONFIDENCE_MATCH",
+        "best_similarity": 0.9763,
+        "threshold": 0.45,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "d3b123f8276112dd66a60e353d41680600958fad293dcafbd332f5cc15142a88"
+    },
+    "previous_hash": "9003ca80f2100a22bc3ca73eaa9191eb30662903d4d68354993cf7b6333cd3ff",
+    "hash": "180507f11ebdf0e80833fb632ba470cafc5a0ec092fedc840a16b0d03fbd109d"
   }
 ]

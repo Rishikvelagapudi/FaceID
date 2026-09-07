@@ -28,34 +28,32 @@ class DeepfakeClassifier:
             return
         self._load_attempted = True
 
-        # Memory conservation safeguard for cloud free tiers (e.g. Render 512MB RAM)
-        enable_vit = os.getenv("ENABLE_VIT_MODEL", "").lower()
-        if enable_vit == "false":
-            logger.info("ViT model disabled via ENABLE_VIT_MODEL=false. Using lightweight spatial-FFT detector.")
+        # Fast spatial-FFT frequency spectrum detector runs in < 2ms without heavy PyTorch import overhead
+        enable_vit = os.getenv("ENABLE_VIT_MODEL", "false").lower()
+        if enable_vit != "true":
+            logger.info("Using ultra-fast spatial-FFT frequency spectrum detector (set ENABLE_VIT_MODEL=true for heavy ViT).")
             self._available = False
             return
-        elif enable_vit != "true":
-            try:
-                import psutil
-                total_mb = psutil.virtual_memory().total / (1024 * 1024)
-                if total_mb < 1200:
-                    logger.info("Host memory is %.0f MB (< 1200 MB). Using lightweight spatial-FFT detector to protect container stability.", total_mb)
-                    self._available = False
-                    return
-            except Exception:
-                pass
 
         try:
             from transformers import AutoImageProcessor, AutoModelForImageClassification
             import torch
 
             logger.info("Initializing ViT deepfake detector: %s", self.model_name)
-            self._processor = AutoImageProcessor.from_pretrained(
-                self.model_name
-            )
-            self._model = AutoModelForImageClassification.from_pretrained(
-                self.model_name
-            )
+            try:
+                self._processor = AutoImageProcessor.from_pretrained(
+                    self.model_name, local_files_only=True
+                )
+                self._model = AutoModelForImageClassification.from_pretrained(
+                    self.model_name, local_files_only=True
+                )
+            except Exception:
+                self._processor = AutoImageProcessor.from_pretrained(
+                    self.model_name
+                )
+                self._model = AutoModelForImageClassification.from_pretrained(
+                    self.model_name
+                )
             self._model.eval()
             self._available = True
             logger.info("ViT Deepfake detector loaded successfully.")
@@ -149,8 +147,14 @@ class DeepfakeClassifier:
 
         try:
             import torch
-            inputs = self._processor(images=image, return_tensors="pt")
-            with torch.no_grad():
+            # Scale image to 512px max to accelerate ViT image preprocessing
+            proc_img = image
+            if max(proc_img.size) > 512:
+                proc_img = proc_img.copy()
+                proc_img.thumbnail((512, 512), Image.Resampling.BILINEAR)
+
+            inputs = self._processor(images=proc_img, return_tensors="pt")
+            with torch.inference_mode():
                 outputs = self._model(**inputs)
                 logits = outputs.logits
                 probs = torch.nn.functional.softmax(logits, dim=-1).squeeze().tolist()

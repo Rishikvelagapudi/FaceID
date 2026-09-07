@@ -55,18 +55,21 @@ class SerpApiGoogleLensProvider(ReverseImageSearchProvider):
         results = []
 
         for item in raw[:max_results]:
-            image_url = (
-                item.get("thumbnail")
-                or item.get("image")
-                or item.get("original")
-            )
+            thumb = item.get("thumbnail")
+            original_img = item.get("image") or item.get("original")
+            # Primary candidate URL is high-speed CDN thumbnail, with fallback to original
+            primary_url = thumb or original_img
+            fallback_url = original_img if thumb and original_img != thumb else None
             link = item.get("link") or item.get("source")
 
             results.append({
                 "title": item.get("title"),
                 "source": item.get("source"),
                 "link": link,
-                "image_url": image_url,
+                "image_url": primary_url,
+                "fallback_url": fallback_url,
+                "thumbnail_url": thumb,
+                "original_url": original_img,
                 "search_engine": "Google Lens via SerpApi",
             })
 

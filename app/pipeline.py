@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 
 from app.face.encoder import FaceEncoder
 from app.image.hashing import fingerprint_image
-from app.image.similarity import verify_candidate
+from app.image.similarity import verify_candidate, compute_source_descriptors
 from app.reverse_search.factory import get_providers
 from app.reverse_search.social_filter import classify_social_url, annotate_trust_signals
 from app.deepfake.classifier import DeepfakeClassifier
@@ -90,27 +90,32 @@ class FaceIDPipeline:
         if verbose:
             print(f"      {len(raw_results)} visual matches returned.")
 
-        # [3/9] Downloading candidate images
+        # [3/9] Downloading candidates in parallel (fast CDN + 3.5s timeout)
         if verbose:
-            print(f"[3/9] Downloading candidate images in parallel…")
-        # [4/9] & [5/9] Extracting face embeddings and ranking by cosine similarity
-        if verbose:
-            print(f"[4/9] Extracting face embeddings from candidates…")
+            print(f"[3/9] Precomputing descriptors & fetching candidates in parallel…")
+        
+        source_phash, source_hist = compute_source_descriptors(image_path)
 
         def _fetch_candidate(item):
             url = item.get("image_url")
+            fallback = item.get("fallback_url")
             if not url:
                 return item, None
             try:
                 from app.image.downloader import download_image
-                return item, download_image(url)
+                return item, download_image(url, fallback_url=fallback)
             except Exception:
                 return item, None
 
         downloaded_items = []
         if raw_results:
-            with ThreadPoolExecutor(max_workers=min(6, len(raw_results))) as executor:
+            worker_count = min(6, len(raw_results))
+            with ThreadPoolExecutor(max_workers=worker_count) as executor:
                 downloaded_items = list(executor.map(_fetch_candidate, raw_results))
+
+        # [4/9] Re-verifying candidate face embeddings (0.16s per candidate)
+        if verbose:
+            print(f"[4/9] Evaluating biometric face embeddings & trust signals…")
 
         verified_results = []
         candidates_with_faces = 0
@@ -119,7 +124,7 @@ class FaceIDPipeline:
         for item, cand_img in downloaded_items:
             try:
                 if cand_img is None:
-                    raise ValueError("Failed to download candidate image")
+                    raise ValueError("Could not download candidate image")
                 comparison = verify_candidate(
                     original_path=image_path,
                     item=item,
@@ -128,12 +133,13 @@ class FaceIDPipeline:
                     similarity_threshold=self.similarity_threshold,
                     phash_max_distance=self.phash_max_distance,
                     candidate_image=cand_img,
+                    source_phash=source_phash,
+                    source_hist=source_hist,
                 )
                 downloaded_count += 1
                 if comparison.get("candidate_face_detected"):
                     candidates_with_faces += 1
 
-                # Annotate social URL and trust signals
                 trust = annotate_trust_signals(item)
                 verified_results.append({**item, **comparison, "social_meta": trust})
             except Exception as exc:
@@ -145,10 +151,12 @@ class FaceIDPipeline:
                     "social_meta": trust,
                     "visual_similarity": 0.0,
                     "cosine_similarity": None,
+                    "candidate_face_detected": False,
+                    "confidence_tier": "ERROR",
                 })
 
         if verbose:
-            print(f"      {downloaded_count} candidates downloaded.")
+            print(f"      {downloaded_count}/{len(raw_results)} candidates downloaded & analyzed.")
             print(f"      {candidates_with_faces}/{max(1, len(raw_results))} candidates had detectable faces.")
 
         # Sort candidates descending by best visual / cosine similarity
@@ -166,9 +174,10 @@ class FaceIDPipeline:
         status = "VERIFIED" if is_match else "NO_CONFIRMED_MATCH"
 
         if verbose:
-            print(f"[5/9] Ranking candidates by cosine similarity…")
+            print(f"[4/9] Ranking candidates by ArcFace biometric similarity…")
             if best:
-                print(f"      Overall best | similarity={best_similarity:.4f} | match={is_match} | url={best.get('link')}")
+                tier = best.get("confidence_tier", "UNSPECIFIED")
+                print(f"      Overall best | tier={tier} | similarity={best_similarity:.4f} | match={is_match} | url={best.get('link')}")
             else:
                 print("      No candidates available to rank.")
 
@@ -256,6 +265,8 @@ class FaceIDPipeline:
                     "cosine_similarity": best.get("cosine_similarity"),
                     "visual_similarity": best.get("visual_similarity"),
                     "phash_distance": best.get("phash_distance"),
+                    "confidence_tier": best.get("confidence_tier"),
+                    "candidate_faces_found": best.get("candidate_faces_found", 0),
                     "verified": best.get("verified"),
                 }
                 if best else None
@@ -263,6 +274,7 @@ class FaceIDPipeline:
             "deepfake_analysis": deepfake_analysis,
             "verification": {
                 "status": status,
+                "confidence_tier": best.get("confidence_tier") if best else "NO_MATCH",
                 "best_similarity": best_similarity,
                 "threshold": self.similarity_threshold,
                 "phash_max_distance": self.phash_max_distance,
