@@ -202,7 +202,7 @@ class FaceIDPipeline:
             "biometrics": {
                 "detected": face_info["detected"],
                 "face_count": face_info["count"],
-                "embedding_model": f"ArcFace 512-d ({getattr(self.encoder, 'model_name', 'buffalo_s')})",
+                "embedding_model": f"ArcFace 512-d ({getattr(self.face_encoder, 'model_name', 'buffalo_s')})",
                 "embedding_persistent": False,  # RAM only
                 "det_score": face_info.get("det_score", 0.0),
                 "face_boxes": face_info.get("face_boxes", []),

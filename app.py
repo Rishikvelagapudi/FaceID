@@ -5,7 +5,7 @@ from pathlib import Path
 
 def run_server(port: int = 8000, host: str = "127.0.0.1"):
     import uvicorn
-    uvicorn.run("app.server:app", host=host, port=port, reload=False)
+    uvicorn.run("app.server:app", host=host, port=port, reload=False, timeout_keep_alive=65)
 
 def run_pipeline(image_path: Path, write_blockchain: bool = True, max_results: int = None, threshold: float = None):
     from app.pipeline import FaceIDPipeline
