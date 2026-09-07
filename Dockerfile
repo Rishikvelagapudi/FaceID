@@ -17,4 +17,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["python", "app.py", "--serve", "--port", "8000", "--host", "0.0.0.0"]
+CMD ["python", "app.py", "--serve", "--host", "0.0.0.0"]

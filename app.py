@@ -1,4 +1,5 @@
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -43,13 +44,16 @@ def run_pipeline(image_path: Path, write_blockchain: bool = True, max_results: i
     return result
 
 def main():
+    default_port = int(os.getenv("PORT", "8000"))
+    default_host = os.getenv("HOST", "0.0.0.0" if os.getenv("PORT") else "127.0.0.1")
+
     parser = argparse.ArgumentParser(
         description="FaceID — Biometric Provenance & OSINT Forensic Pipeline"
     )
     parser.add_argument("--image", type=str, default=None, help="Path to input face image")
     parser.add_argument("--serve", action="store_true", help="Launch interactive Web UI & REST API")
-    parser.add_argument("--port", type=int, default=8000, help="Port to bind server (default: 8000)")
-    parser.add_argument("--host", type=str, default="127.0.0.1", help="Host address (default: 127.0.0.1)")
+    parser.add_argument("--port", type=int, default=default_port, help=f"Port to bind server (default: {default_port})")
+    parser.add_argument("--host", type=str, default=default_host, help=f"Host address (default: {default_host})")
     parser.add_argument("--no-blockchain", action="store_true", help="Skip blockchain registration")
     parser.add_argument("--top-k", "--max-results", type=int, default=None, dest="top_k", help="Max search candidates to inspect")
     parser.add_argument("--threshold", type=float, default=None, help="Minimum cosine similarity threshold")
