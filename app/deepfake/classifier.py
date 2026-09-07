@@ -1,3 +1,4 @@
+import os
 import logging
 from pathlib import Path
 from typing import Union, Dict, Any, Optional
@@ -26,6 +27,24 @@ class DeepfakeClassifier:
         if self._load_attempted:
             return
         self._load_attempted = True
+
+        # Memory conservation safeguard for cloud free tiers (e.g. Render 512MB RAM)
+        enable_vit = os.getenv("ENABLE_VIT_MODEL", "").lower()
+        if enable_vit == "false":
+            logger.info("ViT model disabled via ENABLE_VIT_MODEL=false. Using lightweight spatial-FFT detector.")
+            self._available = False
+            return
+        elif enable_vit != "true":
+            try:
+                import psutil
+                total_mb = psutil.virtual_memory().total / (1024 * 1024)
+                if total_mb < 1200:
+                    logger.info("Host memory is %.0f MB (< 1200 MB). Using lightweight spatial-FFT detector to protect container stability.", total_mb)
+                    self._available = False
+                    return
+            except Exception:
+                pass
+
         try:
             from transformers import AutoImageProcessor, AutoModelForImageClassification
             import torch

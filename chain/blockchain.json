@@ -1231,5 +1231,155 @@
     },
     "previous_hash": "f0b09b09a2d9c870c18c19f4150c556b69837f1ab2355d125250e7eeb4811a11",
     "hash": "79b0ecb7accd2580888ccb491311fae5d2df03d226addcacf1b3b6833179319d"
+  },
+  {
+    "index": 11,
+    "timestamp": 1788773609.0568485,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T09:33:29.056289+00:00",
+      "source_image": {
+        "filename": "sample.jpg",
+        "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d",
+        "phash": "e959968619697996"
+      },
+      "image": {
+        "filename": "sample.jpg",
+        "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d",
+        "phash": "e959968619697996"
+      },
+      "biometrics": {
+        "detected": false,
+        "face_count": 0,
+        "embedding_model": "ArcFace 512-d (buffalo_s)",
+        "embedding_persistent": false,
+        "det_score": 0.0,
+        "face_boxes": [],
+        "landmarks": []
+      },
+      "face": {
+        "detected": false,
+        "count": 0,
+        "embedding_generated": false,
+        "det_score": 0.0,
+        "face_boxes": [],
+        "landmarks": []
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 2,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 2,
+        "error": null
+      },
+      "best_match": {
+        "title": "Rolling into a new era! Once Upon A KATAMARI out NOW on ...",
+        "source": "Instagram",
+        "link": "https://www.instagram.com/p/DQK_wc9iaHM/",
+        "platform": "Instagram",
+        "is_specific_post": true,
+        "post_type": "Post",
+        "cosine_similarity": null,
+        "visual_similarity": 0.3658,
+        "phash_distance": 28,
+        "verified": false
+      },
+      "deepfake_analysis": {
+        "label": "Deepfake",
+        "risk_score": 0.6974,
+        "confidence": 0.6974,
+        "is_synthetic": true,
+        "model": "prithivMLmods/Deep-Fake-Detector-v2-Model",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "NO_CONFIRMED_MATCH",
+        "best_similarity": 0.3658,
+        "threshold": 0.9,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "e25c3beaad64c475b3d01776509999fd392bb2f4477d9b6fe0a1d2568a863344"
+    },
+    "previous_hash": "79b0ecb7accd2580888ccb491311fae5d2df03d226addcacf1b3b6833179319d",
+    "hash": "ac012e7f1e6c3fe32f37621d492d30106d321b7fd44680b41c5fbb00037bbb65"
+  },
+  {
+    "index": 12,
+    "timestamp": 1788773744.7905204,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T09:35:44.790021+00:00",
+      "source_image": {
+        "filename": "sample.jpg",
+        "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d",
+        "phash": "e959968619697996"
+      },
+      "image": {
+        "filename": "sample.jpg",
+        "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d",
+        "phash": "e959968619697996"
+      },
+      "biometrics": {
+        "detected": false,
+        "face_count": 0,
+        "embedding_model": "ArcFace 512-d (buffalo_s)",
+        "embedding_persistent": false,
+        "det_score": 0.0,
+        "face_boxes": [],
+        "landmarks": []
+      },
+      "face": {
+        "detected": false,
+        "count": 0,
+        "embedding_generated": false,
+        "det_score": 0.0,
+        "face_boxes": [],
+        "landmarks": []
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 2,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 2,
+        "error": null
+      },
+      "best_match": {
+        "title": "MANGORO - YouTube",
+        "source": "YouTube",
+        "link": "https://www.youtube.com/@mangoro_official",
+        "platform": "YouTube",
+        "is_specific_post": false,
+        "post_type": "Generic Portal / Aggregator",
+        "cosine_similarity": null,
+        "visual_similarity": 0.4478,
+        "phash_distance": 20,
+        "verified": false
+      },
+      "deepfake_analysis": {
+        "label": "Authentic / Real",
+        "risk_score": 0.05,
+        "confidence": 0.9,
+        "is_synthetic": false,
+        "model": "Spatial-FFT-Heuristic (Offline Fallback)",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "NO_CONFIRMED_MATCH",
+        "best_similarity": 0.4478,
+        "threshold": 0.9,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "bffde6f891773c39da9467c1014ac596011dda1a5e282d7f2773fe8bb6c89e9d"
+    },
+    "previous_hash": "ac012e7f1e6c3fe32f37621d492d30106d321b7fd44680b41c5fbb00037bbb65",
+    "hash": "2811693115f654795b8edbe36cbdd57e20dd75c4e30fb679adade8062a4e3373"
   }
 ]
