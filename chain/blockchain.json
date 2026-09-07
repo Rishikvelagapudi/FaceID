@@ -1,0 +1,13 @@
+[
+  {
+    "index": 0,
+    "timestamp": 1726000000.0,
+    "evidence_record": {
+      "title": "face-chain Genesis Block",
+      "protocol": "Biometric Provenance Ledger v1.0",
+      "status": "INITIALIZED"
+    },
+    "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "b6e30c46873474b7a1a22e0bb103f85934f45a42439658668a434850b11e4b8d"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "inputs": [
+      {"internalType": "bytes32", "name": "imageHash", "type": "bytes32"},
+      {"internalType": "bytes32", "name": "metadataHash", "type": "bytes32"}
+    ],
+    "name": "registerRecord",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {"internalType": "bytes32", "name": "imageHash", "type": "bytes32"}
+    ],
+    "name": "getRecord",
+    "outputs": [
+      {"internalType": "bytes32", "name": "imageHash", "type": "bytes32"},
+      {"internalType": "bytes32", "name": "metadataHash", "type": "bytes32"},
+      {"internalType": "uint256", "name": "timestamp", "type": "uint256"},
+      {"internalType": "address", "name": "submitter", "type": "address"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "source_image": {
+    "filename": "sample.jpg",
+    "sha256": "708d6852d0bc089b85cf8bd721be6822e5469a6c0509f7b762b6e52ba47ab56c"
+  },
+  "best_match": {
+    "platform": "Instagram",
+    "url": "https://www.instagram.com/reel/DXGaS1lDMC1/",
+    "cosine_similarity": 1.0000,
+    "confirmed": true
+  },
+  "evidence": {
+    "sha256_hash": "cbfd4687a965dfabbb143fa3b481c7862303abdb5dfc336bbc3966a47a8a4b41",
+    "timestamp": 1726058400
+  },
+  "blockchain": {
+    "network": "Ethereum Sepolia Testnet",
+    "chain_id": 11155111,
+    "tx_hash": "0x866a0e6987418ccb7cd9fb013694487e4dc3e7cd8dac70c68b91116bbdff42ac",
+    "explorer_url": "https://sepolia.etherscan.io/tx/0x866a0e6987418ccb7cd9fb013694487e4dc3e7cd8dac70c68b91116bbdff42ac"
+  }
+}

@@ -1,0 +1,42 @@
+/* FaceProof Retro-Brutalist Terminal Stylesheet */
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 30s linear infinite;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #fbbf24;
+}
+
+/* Brutalist Button Active Press Effect */
+button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,1) !important;
+}
+
+/* Custom Selection Highlight */
+::selection {
+    background-color: #000000;
+    color: #34d399;
+}

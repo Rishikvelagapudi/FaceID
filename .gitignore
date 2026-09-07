@@ -1,0 +1,42 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Python & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Large models cache
+models/
+.cache/
+
+# Data artifacts
+data/candidates/
+data/input/*
+!data/input/.gitkeep
+!data/input/sample.jpg
+
+# Forensic results
+results/*
+!results/.gitkeep
+!results/result.json
+
+# IDEs & System
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+Desktop.ini
