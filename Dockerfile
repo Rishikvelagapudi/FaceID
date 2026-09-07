@@ -2,6 +2,9 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
+# Suppress pip root user warnings in Docker
+ENV PIP_ROOT_USER_ACTION=ignore
+
 # Install system dependencies for OpenCV and networking
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgl1 \
