@@ -1,3 +1,13 @@
+---
+title: FaceID
+emoji: 🛡️
+colorFrom: green
+colorTo: emerald
+sdk: docker
+app_port: 8000
+pinned: false
+---
+
 # 🛡️ FaceID
 
 > **End-to-End Biometric Provenance, OSINT Social Attribution & Dual-Layer Blockchain Forensic Pipeline**
