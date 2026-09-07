@@ -99,14 +99,12 @@
                         </button>
                     </div>
 
-                    <!-- Default Geometric Star Scanner Graphic (when awaiting image) -->
-                    <div id="target-graphic" class="py-6 space-y-4 cursor-pointer" id="dropzone">
-                        <div class="relative w-36 h-36 mx-auto flex items-center justify-center">
-                            <!-- Geometric Star Polygon SVG -->
-                            <svg class="w-32 h-32 text-slate-900 animate-spin-slow" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <polygon points="50,5 61,35 95,35 68,55 79,90 50,70 21,90 32,55 5,35 39,35" fill="#0A1E17" stroke="#000" stroke-width="2"/>
-                                <circle cx="50" cy="50" r="18" fill="#F43F5E" stroke="#000" stroke-width="2"/>
-                                <path d="M50 40v20M40 50h20" stroke="#FFF" stroke-width="3" stroke-linecap="round"/>
+                    <!-- Default Scanner Graphic (when awaiting image) -->
+                    <div id="target-graphic" class="py-6 space-y-4 cursor-pointer">
+                        <div class="relative w-28 h-28 mx-auto flex items-center justify-center border-2 border-dashed border-black bg-white rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-slate-100 transition-all">
+                            <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
                             </svg>
                         </div>
                         <div class="bg-black text-emerald-400 font-mono text-xs font-extrabold py-1.5 px-3 inline-block uppercase tracking-wider border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
