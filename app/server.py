@@ -40,6 +40,9 @@ class Base64ImageRequest(BaseModel):
     threshold: Optional[float] = None
     top_k: Optional[int] = None
 
+class UrlImageRequest(BaseModel):
+    url: str
+
 @app.get("/health")
 @app.get("/api/health")
 def health_check():
@@ -107,7 +110,8 @@ def diagnose_system():
 @app.post("/api/verify")
 def analyse_image(
     file: UploadFile = File(...),
-    write_blockchain: Optional[Union[bool, str]] = Form(False),
+    write_blockchain: Optional[Union[bool, str]] = Form(None),
+    write_blockchain_query: Optional[Union[bool, str]] = Query(None, alias="write_blockchain"),
     threshold: Optional[float] = Query(None, description="Cosine similarity threshold"),
     top_k: Optional[int] = Query(None, description="Max candidate results to inspect"),
 ):
@@ -119,11 +123,12 @@ def analyse_image(
     and logs to Layer 1 local blockchain (+ optional Layer 2 Sepolia).
     """
     try:
+        raw_wb = write_blockchain if write_blockchain is not None else write_blockchain_query
         wb = False
-        if isinstance(write_blockchain, bool):
-            wb = write_blockchain
-        elif isinstance(write_blockchain, str):
-            wb = write_blockchain.strip().lower() in ("true", "1", "yes")
+        if isinstance(raw_wb, bool):
+            wb = raw_wb
+        elif isinstance(raw_wb, str):
+            wb = raw_wb.strip().lower() in ("true", "1", "yes")
 
         file_ext = Path(file.filename).suffix or ".jpg"
         temp_filename = f"upload_{uuid.uuid4().hex[:8]}{file_ext}"
@@ -174,6 +179,42 @@ def verify_image_base64(req: Base64ImageRequest):
         return JSONResponse(content=result)
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc))
+
+@app.post("/api/load-url")
+def load_image_url(req: UrlImageRequest):
+    """
+    Fetch an image from an external URL server-side (bypassing browser CORS)
+    and return as base64 data URI for frontend canvas display.
+    """
+    url = (req.url or "").strip()
+    if not url:
+        raise HTTPException(status_code=400, detail="Empty image URL provided.")
+    if not (url.startswith("http://") or url.startswith("https://")):
+        raise HTTPException(status_code=400, detail="Invalid URL. Must start with http:// or https://")
+    
+    try:
+        import requests
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        }
+        res = requests.get(url, headers=headers, timeout=12)
+        if res.status_code != 200:
+            raise HTTPException(status_code=400, detail=f"Failed to fetch image from URL: HTTP {res.status_code}")
+        
+        content_type = res.headers.get("content-type", "").lower()
+        if "image" not in content_type:
+            if not (res.content[:4] in (b'\xff\xd8\xff\xe0', b'\xff\xd8\xff\xe1') or res.content[:8] == b'\x89PNG\r\n\x1a\n' or res.content[:4] == b'RIFF'):
+                raise HTTPException(status_code=400, detail=f"URL did not return a valid image format.")
+            content_type = "image/jpeg"
+        
+        clean_mime = content_type.split(';')[0].strip() or "image/jpeg"
+        b64 = base64.b64encode(res.content).decode("utf-8")
+        data_uri = f"data:{clean_mime};base64,{b64}"
+        return {"status": "ok", "data_uri": data_uri, "size_bytes": len(res.content)}
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=f"Error loading image URL: {str(exc)}")
 
 @app.get("/chain")
 def get_blockchain_ledger():

@@ -1861,5 +1861,638 @@
     },
     "previous_hash": "eee226c759fe3352a657f0150fea87ba626066bde7ed35f3a632f64b2cb8c245",
     "hash": "4e7047ee262411c40ea2ca52711b9c897bb56517786e0f5605877fe5e7380e6a"
+  },
+  {
+    "index": 17,
+    "timestamp": 1788806932.4094827,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T18:48:52.277016+00:00",
+      "source_image": {
+        "filename": "upload_e6fd08c5.jpg",
+        "sha256": "668734830ad2e7e1291874da4af4220ee4b399c24e0b98135b5e2c87f37cbeb6",
+        "phash": "f4c82a1258e8ede7"
+      },
+      "image": {
+        "filename": "upload_e6fd08c5.jpg",
+        "sha256": "668734830ad2e7e1291874da4af4220ee4b399c24e0b98135b5e2c87f37cbeb6",
+        "phash": "f4c82a1258e8ede7"
+      },
+      "biometrics": {
+        "detected": true,
+        "face_count": 3,
+        "embedding_model": "ArcFace 512-d (buffalo_s)",
+        "embedding_persistent": false,
+        "det_score": 0.9042371511459351,
+        "face_boxes": [
+          [
+            455.00006103515625,
+            203.0751495361328,
+            529.8195190429688,
+            300.2733154296875
+          ],
+          [
+            638.1295166015625,
+            160.68983459472656,
+            716.6001586914062,
+            259.77899169921875
+          ],
+          [
+            224.07347106933594,
+            70.3359603881836,
+            327.3645935058594,
+            195.80319213867188
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              478.50323486328125,
+              244.516357421875
+            ],
+            [
+              513.3977661132812,
+              243.3027801513672
+            ],
+            [
+              498.6305847167969,
+              261.8257751464844
+            ],
+            [
+              480.8501281738281,
+              275.8027648925781
+            ],
+            [
+              511.6424255371094,
+              275.0072937011719
+            ]
+          ],
+          [
+            [
+              654.5244750976562,
+              201.60406494140625
+            ],
+            [
+              690.6818237304688,
+              199.7499237060547
+            ],
+            [
+              670.7181396484375,
+              219.8472900390625
+            ],
+            [
+              657.2827758789062,
+              232.32391357421875
+            ],
+            [
+              692.0364990234375,
+              230.51934814453125
+            ]
+          ],
+          [
+            [
+              255.83157348632812,
+              117.82073211669922
+            ],
+            [
+              302.9498291015625,
+              123.97554779052734
+            ],
+            [
+              277.9944763183594,
+              141.1086883544922
+            ],
+            [
+              254.52720642089844,
+              162.09469604492188
+            ],
+            [
+              293.5672607421875,
+              167.2250518798828
+            ]
+          ]
+        ]
+      },
+      "face": {
+        "detected": true,
+        "count": 3,
+        "embedding_generated": true,
+        "det_score": 0.9042371511459351,
+        "face_boxes": [
+          [
+            455.00006103515625,
+            203.0751495361328,
+            529.8195190429688,
+            300.2733154296875
+          ],
+          [
+            638.1295166015625,
+            160.68983459472656,
+            716.6001586914062,
+            259.77899169921875
+          ],
+          [
+            224.07347106933594,
+            70.3359603881836,
+            327.3645935058594,
+            195.80319213867188
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              478.50323486328125,
+              244.516357421875
+            ],
+            [
+              513.3977661132812,
+              243.3027801513672
+            ],
+            [
+              498.6305847167969,
+              261.8257751464844
+            ],
+            [
+              480.8501281738281,
+              275.8027648925781
+            ],
+            [
+              511.6424255371094,
+              275.0072937011719
+            ]
+          ],
+          [
+            [
+              654.5244750976562,
+              201.60406494140625
+            ],
+            [
+              690.6818237304688,
+              199.7499237060547
+            ],
+            [
+              670.7181396484375,
+              219.8472900390625
+            ],
+            [
+              657.2827758789062,
+              232.32391357421875
+            ],
+            [
+              692.0364990234375,
+              230.51934814453125
+            ]
+          ],
+          [
+            [
+              255.83157348632812,
+              117.82073211669922
+            ],
+            [
+              302.9498291015625,
+              123.97554779052734
+            ],
+            [
+              277.9944763183594,
+              141.1086883544922
+            ],
+            [
+              254.52720642089844,
+              162.09469604492188
+            ],
+            [
+              293.5672607421875,
+              167.2250518798828
+            ]
+          ]
+        ]
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 10,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 10,
+        "error": null
+      },
+      "best_match": {
+        "title": "CBSE students fare well in Class 10, 12 examinations - The Hindu",
+        "source": "The Hindu",
+        "link": "https://www.thehindu.com/news/cities/Madurai/cbse-students-fare-well-in-class-10-12-examinations/article66844117.ece",
+        "platform": "thehindu.com",
+        "is_specific_post": false,
+        "post_type": "Web Article / Forum",
+        "cosine_similarity": 0.2997,
+        "visual_similarity": 0.2997,
+        "phash_distance": 32,
+        "verified": false
+      },
+      "deepfake_analysis": {
+        "label": "Deepfake",
+        "risk_score": 0.7035,
+        "confidence": 0.7035,
+        "is_synthetic": true,
+        "model": "prithivMLmods/Deep-Fake-Detector-v2-Model",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "NO_CONFIRMED_MATCH",
+        "best_similarity": 0.2997,
+        "threshold": 0.45,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "b425ce690999a38b1051a18259c51089c673d9fbc22c93829161ec0016127f52"
+    },
+    "previous_hash": "4e7047ee262411c40ea2ca52711b9c897bb56517786e0f5605877fe5e7380e6a",
+    "hash": "771b44a7927ad1472318deb78661ef0a5c4d44ddf11a127f03dbb871dd46216b"
+  },
+  {
+    "index": 18,
+    "timestamp": 1788806998.3713183,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T18:49:58.370503+00:00",
+      "source_image": {
+        "filename": "upload_da40201a.jpg",
+        "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d",
+        "phash": "e959968619697996"
+      },
+      "image": {
+        "filename": "upload_da40201a.jpg",
+        "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d",
+        "phash": "e959968619697996"
+      },
+      "biometrics": {
+        "detected": false,
+        "face_count": 0,
+        "embedding_model": "ArcFace 512-d (buffalo_s)",
+        "embedding_persistent": false,
+        "det_score": 0.0,
+        "face_boxes": [],
+        "landmarks": []
+      },
+      "face": {
+        "detected": false,
+        "count": 0,
+        "embedding_generated": false,
+        "det_score": 0.0,
+        "face_boxes": [],
+        "landmarks": []
+      },
+      "osint_search": {
+        "provider": null,
+        "total_candidates": 0,
+        "error": "HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=8)"
+      },
+      "reverse_search": {
+        "provider": null,
+        "count": 0,
+        "error": "HTTPSConnectionPool(host='serpapi.com', port=443): Read timed out. (read timeout=8)"
+      },
+      "best_match": null,
+      "deepfake_analysis": {
+        "label": "Deepfake",
+        "risk_score": 0.6974,
+        "confidence": 0.6974,
+        "is_synthetic": true,
+        "model": "prithivMLmods/Deep-Fake-Detector-v2-Model",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "NO_CONFIRMED_MATCH",
+        "best_similarity": 0.0,
+        "threshold": 0.45,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "3db7ef5e8754c37c4afb585a265e0d605ae5afa197dc6e91722f9a08d1281296"
+    },
+    "previous_hash": "771b44a7927ad1472318deb78661ef0a5c4d44ddf11a127f03dbb871dd46216b",
+    "hash": "e91e65a37abed8490d4903306049d4b45ef9ad02208524723de1d38387b75a0d"
+  },
+  {
+    "index": 19,
+    "timestamp": 1788807448.5249043,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T18:57:28.523058+00:00",
+      "source_image": {
+        "filename": "webcam_ba796d1c.jpg",
+        "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d",
+        "phash": "e959968619697996"
+      },
+      "image": {
+        "filename": "webcam_ba796d1c.jpg",
+        "sha256": "954419c50ed11c9db3bd5453548eb1a2c39a967bfdc78dfc9e4f45a034d0ea3d",
+        "phash": "e959968619697996"
+      },
+      "biometrics": {
+        "detected": false,
+        "face_count": 0,
+        "embedding_model": "ArcFace 512-d (buffalo_s)",
+        "embedding_persistent": false,
+        "det_score": 0.0,
+        "face_boxes": [],
+        "landmarks": []
+      },
+      "face": {
+        "detected": false,
+        "count": 0,
+        "embedding_generated": false,
+        "det_score": 0.0,
+        "face_boxes": [],
+        "landmarks": []
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 1,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 1,
+        "error": null
+      },
+      "best_match": {
+        "title": "They combine all main line games in two sentences: : r/katamari",
+        "source": "Reddit",
+        "link": "https://www.reddit.com/r/katamari/comments/1merb7l/they_combine_all_main_line_games_in_two_sentences/",
+        "platform": "Reddit",
+        "is_specific_post": true,
+        "post_type": "Post",
+        "cosine_similarity": null,
+        "visual_similarity": 0.2848,
+        "phash_distance": 36,
+        "verified": false
+      },
+      "deepfake_analysis": {
+        "label": "Authentic / Real",
+        "risk_score": 0.05,
+        "confidence": 0.9,
+        "is_synthetic": false,
+        "model": "Spatial-FFT-Heuristic (Offline Fallback)",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "NO_CONFIRMED_MATCH",
+        "best_similarity": 0.2848,
+        "threshold": 0.45,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "d1b5499078e4f82512475880faf6919ae7afd9b4c4b8433a570046c4b5d75bb9"
+    },
+    "previous_hash": "e91e65a37abed8490d4903306049d4b45ef9ad02208524723de1d38387b75a0d",
+    "hash": "7e1f6aaf6c6b8eea93720325aa2c1155451bb5a77fcb8095c8f1f9cdb26426cf"
+  },
+  {
+    "index": 20,
+    "timestamp": 1788807465.507085,
+    "evidence_record": {
+      "schema_version": "2.0",
+      "protocol": "FaceID forensic evidence",
+      "created_at": "2026-09-07T18:57:45.505355+00:00",
+      "source_image": {
+        "filename": "webcam_7a4e374e.jpg",
+        "sha256": "668734830ad2e7e1291874da4af4220ee4b399c24e0b98135b5e2c87f37cbeb6",
+        "phash": "f4c82a1258e8ede7"
+      },
+      "image": {
+        "filename": "webcam_7a4e374e.jpg",
+        "sha256": "668734830ad2e7e1291874da4af4220ee4b399c24e0b98135b5e2c87f37cbeb6",
+        "phash": "f4c82a1258e8ede7"
+      },
+      "biometrics": {
+        "detected": true,
+        "face_count": 3,
+        "embedding_model": "ArcFace 512-d (buffalo_s)",
+        "embedding_persistent": false,
+        "det_score": 0.9042371511459351,
+        "face_boxes": [
+          [
+            455.00006103515625,
+            203.0751495361328,
+            529.8195190429688,
+            300.2733154296875
+          ],
+          [
+            638.1295166015625,
+            160.68983459472656,
+            716.6001586914062,
+            259.77899169921875
+          ],
+          [
+            224.07347106933594,
+            70.3359603881836,
+            327.3645935058594,
+            195.80319213867188
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              478.50323486328125,
+              244.516357421875
+            ],
+            [
+              513.3977661132812,
+              243.3027801513672
+            ],
+            [
+              498.6305847167969,
+              261.8257751464844
+            ],
+            [
+              480.8501281738281,
+              275.8027648925781
+            ],
+            [
+              511.6424255371094,
+              275.0072937011719
+            ]
+          ],
+          [
+            [
+              654.5244750976562,
+              201.60406494140625
+            ],
+            [
+              690.6818237304688,
+              199.7499237060547
+            ],
+            [
+              670.7181396484375,
+              219.8472900390625
+            ],
+            [
+              657.2827758789062,
+              232.32391357421875
+            ],
+            [
+              692.0364990234375,
+              230.51934814453125
+            ]
+          ],
+          [
+            [
+              255.83157348632812,
+              117.82073211669922
+            ],
+            [
+              302.9498291015625,
+              123.97554779052734
+            ],
+            [
+              277.9944763183594,
+              141.1086883544922
+            ],
+            [
+              254.52720642089844,
+              162.09469604492188
+            ],
+            [
+              293.5672607421875,
+              167.2250518798828
+            ]
+          ]
+        ]
+      },
+      "face": {
+        "detected": true,
+        "count": 3,
+        "embedding_generated": true,
+        "det_score": 0.9042371511459351,
+        "face_boxes": [
+          [
+            455.00006103515625,
+            203.0751495361328,
+            529.8195190429688,
+            300.2733154296875
+          ],
+          [
+            638.1295166015625,
+            160.68983459472656,
+            716.6001586914062,
+            259.77899169921875
+          ],
+          [
+            224.07347106933594,
+            70.3359603881836,
+            327.3645935058594,
+            195.80319213867188
+          ]
+        ],
+        "landmarks": [
+          [
+            [
+              478.50323486328125,
+              244.516357421875
+            ],
+            [
+              513.3977661132812,
+              243.3027801513672
+            ],
+            [
+              498.6305847167969,
+              261.8257751464844
+            ],
+            [
+              480.8501281738281,
+              275.8027648925781
+            ],
+            [
+              511.6424255371094,
+              275.0072937011719
+            ]
+          ],
+          [
+            [
+              654.5244750976562,
+              201.60406494140625
+            ],
+            [
+              690.6818237304688,
+              199.7499237060547
+            ],
+            [
+              670.7181396484375,
+              219.8472900390625
+            ],
+            [
+              657.2827758789062,
+              232.32391357421875
+            ],
+            [
+              692.0364990234375,
+              230.51934814453125
+            ]
+          ],
+          [
+            [
+              255.83157348632812,
+              117.82073211669922
+            ],
+            [
+              302.9498291015625,
+              123.97554779052734
+            ],
+            [
+              277.9944763183594,
+              141.1086883544922
+            ],
+            [
+              254.52720642089844,
+              162.09469604492188
+            ],
+            [
+              293.5672607421875,
+              167.2250518798828
+            ]
+          ]
+        ]
+      },
+      "osint_search": {
+        "provider": "SerpApi Google Lens",
+        "total_candidates": 1,
+        "error": null
+      },
+      "reverse_search": {
+        "provider": "SerpApi Google Lens",
+        "count": 1,
+        "error": null
+      },
+      "best_match": {
+        "title": "So Dad was placed into @saint_gobain_in Bangalore after ...",
+        "source": "Instagram",
+        "link": "https://www.instagram.com/p/C7tBFactw51/",
+        "platform": "Instagram",
+        "is_specific_post": true,
+        "post_type": "Post",
+        "cosine_similarity": 0.0,
+        "visual_similarity": 0.0,
+        "phash_distance": 36,
+        "verified": false
+      },
+      "deepfake_analysis": {
+        "label": "Deepfake",
+        "risk_score": 0.7035,
+        "confidence": 0.7035,
+        "is_synthetic": true,
+        "model": "prithivMLmods/Deep-Fake-Detector-v2-Model",
+        "status": "ANALYZED"
+      },
+      "verification": {
+        "status": "NO_CONFIRMED_MATCH",
+        "best_similarity": 0.0,
+        "threshold": 0.45,
+        "phash_max_distance": 12
+      },
+      "evidence_hash": "5b2e197ff93a87f6fb84e66114da3054c67ee0b396ad2b01f4c5246539cbf174"
+    },
+    "previous_hash": "7e1f6aaf6c6b8eea93720325aa2c1155451bb5a77fcb8095c8f1f9cdb26426cf",
+    "hash": "58388b1370fd4f5d000b28fd70f196670a3e06677d81b53bbecb7504b3c36b73"
   }
 ]

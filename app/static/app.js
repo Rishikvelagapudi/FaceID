@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnSample1 = document.getElementById('btn-sample-1');
     const btnSample2 = document.getElementById('btn-sample-2');
     const btnDownloadImg = document.getElementById('btn-download-img');
+    const btnChangeImg = document.getElementById('btn-change-img');
+    const imageUrlInput = document.getElementById('image-url-input');
+    const btnLoadUrl = document.getElementById('btn-load-url');
 
     // Right Panel Elements
     const seaStatusBadge = document.getElementById('sea-status-badge');
@@ -67,16 +70,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // File Input Trigger
-    if (targetGraphic) {
-        targetGraphic.addEventListener('click', () => fileInput.click());
-    }
+    // File Input Trigger & Reset Handling
     if (fileInput) {
         fileInput.addEventListener('change', (e) => {
-            if (e.target.files && e.target.files[0]) {
+            if (e.target.files && e.target.files.length > 0) {
                 handleFileSelect(e.target.files[0]);
+                // Clear input value so selecting same file again re-triggers change event
+                fileInput.value = '';
             }
         });
+    }
+
+    // Reset / Change Image Handler
+    if (btnChangeImg) {
+        btnChangeImg.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            resetInputState();
+        });
+    }
+
+    function resetInputState() {
+        stopWebcam();
+        selectedFile = null;
+        base64Snapshot = null;
+        currentImageElement = null;
+        if (fileInput) fileInput.value = '';
+        if (previewContainer) previewContainer.classList.add('hidden');
+        if (webcamContainer) webcamContainer.classList.add('hidden');
+        if (targetGraphic) targetGraphic.classList.remove('hidden');
+        if (imageUrlInput) imageUrlInput.value = '';
+        logLine.textContent = '> INPUT CLEARED. SELECT A FILE, SAMPLE, OR IMAGE URL.';
     }
 
     // Drag and Drop Handling
@@ -106,20 +130,109 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dropZone.addEventListener('drop', (e) => {
             const dt = e.dataTransfer;
-            const files = dt.files;
-            if (files && files.length > 0) {
-                handleFileSelect(files[0]);
+            if (dt && dt.files && dt.files.length > 0) {
+                handleFileSelect(dt.files[0]);
             }
         });
     }
 
+    // Direct Image URL Fetching
+    if (btnLoadUrl && imageUrlInput) {
+        btnLoadUrl.addEventListener('click', (e) => {
+            e.preventDefault();
+            loadUrlImage();
+        });
+        imageUrlInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                loadUrlImage();
+            }
+        });
+    }
+
+    async function loadUrlImage() {
+        if (!imageUrlInput) return;
+        const url = imageUrlInput.value.trim();
+        if (!url) {
+            alert('Please paste a direct image URL first.');
+            return;
+        }
+        logLine.textContent = `> FETCHING IMAGE VIA SERVER PROXY: ${url.slice(0, 40)}...`;
+        btnLoadUrl.disabled = true;
+        btnLoadUrl.textContent = 'FETCHING...';
+
+        try {
+            const res = await fetch('/api/load-url', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ url })
+            });
+            if (!res.ok) {
+                let msg = 'Failed to fetch image URL';
+                try {
+                    const err = await res.json();
+                    if (err && err.detail) msg = err.detail;
+                } catch (_) {}
+                throw new Error(msg);
+            }
+            const data = await res.json();
+            selectedFile = null;
+            base64Snapshot = data.data_uri;
+            displayPreview(data.data_uri);
+            logLine.textContent = `> IMAGE LOADED FROM URL (${(data.size_bytes / 1024).toFixed(1)} KB). READY.`;
+        } catch (err) {
+            logLine.textContent = `> URL LOAD ERROR: ${err.message}`;
+            alert('Could not load image from URL: ' + err.message);
+        } finally {
+            btnLoadUrl.disabled = false;
+            btnLoadUrl.textContent = 'LOAD';
+        }
+    }
+
+    // Global Clipboard Paste (Ctrl+V)
+    window.addEventListener('paste', (e) => {
+        if (!e.clipboardData) return;
+        const items = e.clipboardData.items;
+        if (items) {
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].type.indexOf('image') !== -1) {
+                    const file = items[i].getAsFile();
+                    if (file) {
+                        logLine.textContent = '> IMAGE DETECTED FROM CLIPBOARD (CTRL+V).';
+                        handleFileSelect(file);
+                        return;
+                    }
+                }
+            }
+        }
+        // If text pasted and looks like image URL
+        const activeTag = document.activeElement ? document.activeElement.tagName : '';
+        if (activeTag !== 'INPUT' && activeTag !== 'TEXTAREA') {
+            const text = e.clipboardData.getData('text');
+            if (text && (text.startsWith('http://') || text.startsWith('https://'))) {
+                if (imageUrlInput) imageUrlInput.value = text.trim();
+                loadUrlImage();
+            }
+        }
+    });
+
     function handleFileSelect(file) {
         stopWebcam();
+        if (!file) return;
+        if (!file.type.startsWith('image/')) {
+            alert('Please select a valid image file (JPG, PNG, WebP).');
+            return;
+        }
         selectedFile = file;
         base64Snapshot = null;
+        logLine.textContent = `> LOADING FILE: ${file.name} (${(file.size / 1024).toFixed(1)} KB)...`;
         const reader = new FileReader();
         reader.onload = (event) => {
             displayPreview(event.target.result);
+        };
+        reader.onerror = () => {
+            logLine.textContent = '> ERROR READING IMAGE FILE.';
+            alert('Could not read image file.');
         };
         reader.readAsDataURL(file);
     }
@@ -139,6 +252,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (targetGraphic) targetGraphic.classList.add('hidden');
             if (webcamContainer) webcamContainer.classList.add('hidden');
             logLine.textContent = `> IMAGE LOADED: ${img.width}x${img.height} PX. READY FOR VERIFICATION.`;
+        };
+        img.onerror = () => {
+            logLine.textContent = '> ERROR RENDERING IMAGE DATA.';
+            alert('Failed to display image preview.');
         };
         img.src = dataUrl;
     }

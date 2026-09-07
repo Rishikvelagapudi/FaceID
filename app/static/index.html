@@ -78,22 +78,26 @@
                 <!-- Central Geometric Scan Target Box -->
                 <div id="drop-zone" class="border-2 border-dashed border-black bg-[#FAF8F3] p-4 text-center relative overflow-hidden shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all">
                     
-                    <!-- File Input Hidden -->
-                    <input type="file" id="file-input" accept="image/*" class="hidden">
+                    <!-- File Input (sr-only for full accessibility & native trigger) -->
+                    <input type="file" id="file-input" accept="image/*" class="sr-only">
 
                     <!-- Canvas Preview for Image + Landmark Overlay -->
-                    <div id="preview-container" class="hidden relative w-full h-64 bg-slate-950 border-2 border-black flex items-center justify-center overflow-hidden mb-3 group">
+                    <div id="preview-container" class="hidden relative w-full h-64 bg-slate-950 border-2 border-black flex items-center justify-center overflow-hidden mb-2 group">
                         <canvas id="canvas-overlay" class="max-w-full max-h-full object-contain"></canvas>
                         <div class="absolute top-2 right-2 flex items-center space-x-1.5 z-20">
-                            <button id="btn-download-img" title="Download Analyzed Facial Image" class="bg-black/90 hover:bg-black text-amber-300 border border-black px-2.5 py-1 text-[11px] font-mono font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center space-x-1 active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer">
+                            <button id="btn-change-img" type="button" title="Select or Upload Another Image" class="bg-red-600 hover:bg-red-700 text-white border border-black px-2.5 py-1 text-[11px] font-mono font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center space-x-1 active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer">
+                                <span>✕</span>
+                                <span>CHANGE IMAGE</span>
+                            </button>
+                            <button id="btn-download-img" type="button" title="Download Analyzed Facial Image" class="bg-black/90 hover:bg-black text-amber-300 border border-black px-2.5 py-1 text-[11px] font-mono font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center space-x-1 active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer">
                                 <span>📥</span>
-                                <span>DOWNLOAD IMAGE</span>
+                                <span>DOWNLOAD</span>
                             </button>
                         </div>
                     </div>
 
                     <!-- Webcam Live Capture Container -->
-                    <div id="webcam-container" class="hidden relative w-full h-64 bg-black border-2 border-black flex flex-col items-center justify-center overflow-hidden mb-3">
+                    <div id="webcam-container" class="hidden relative w-full h-64 bg-black border-2 border-black flex flex-col items-center justify-center overflow-hidden mb-2">
                         <video id="webcam-video" autoplay playsinline class="w-full h-full object-cover"></video>
                         <div class="absolute bottom-2 left-0 right-0 flex justify-center space-x-2">
                             <button id="btn-snap-webcam" class="bg-amber-400 text-black font-mono font-bold text-xs px-3 py-1 border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-amber-300">
@@ -106,19 +110,38 @@
                     </div>
 
                     <!-- Default Scanner Graphic (when awaiting image) -->
-                    <div id="target-graphic" class="py-6 space-y-4 cursor-pointer">
-                        <div class="relative w-28 h-28 mx-auto flex items-center justify-center border-2 border-dashed border-black bg-white rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-slate-100 transition-all">
-                            <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
-                            </svg>
-                        </div>
-                        <div class="bg-black text-emerald-400 font-mono text-xs font-extrabold py-1.5 px-3 inline-block uppercase tracking-wider border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                            &gt;&gt;&gt; CLICK OR DRAG IMAGE HERE &lt;&lt;&lt;
-                        </div>
-                        <p class="text-xs font-mono font-bold text-slate-700">Drop facial scan, photo, or portrait</p>
+                    <div id="target-graphic" class="py-4 space-y-3">
+                        <label for="file-input" class="cursor-pointer block space-y-3 select-none">
+                            <div class="relative w-24 h-24 mx-auto flex items-center justify-center border-2 border-dashed border-black bg-white rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-slate-100 transition-all">
+                                <svg class="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="inline-flex items-center space-x-2 bg-black hover:bg-slate-800 text-amber-300 font-mono font-black text-xs px-4 py-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 transition-all">
+                                    <span>📁</span>
+                                    <span>SELECT IMAGE FROM COMPUTER</span>
+                                </span>
+                            </div>
+                            <p class="text-[11px] font-mono font-bold text-slate-700">or Drag & Drop image file here</p>
+                        </label>
                     </div>
 
+                </div>
+
+                <!-- Direct URL Loader -->
+                <div class="border-2 border-black p-2.5 bg-[#FAF8F3] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] space-y-1.5">
+                    <div class="flex items-center justify-between text-[11px] font-mono font-bold text-slate-800">
+                        <span>🌐 OR LOAD FROM IMAGE URL:</span>
+                        <span class="text-[10px] text-slate-500 font-normal">Supports Ctrl+V anywhere</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <input type="url" id="image-url-input" placeholder="Paste image link (https://...)" class="flex-1 bg-white border-2 border-black px-2.5 py-1.5 text-xs font-mono text-black placeholder-slate-400 focus:outline-none focus:bg-amber-50">
+                        <button id="btn-load-url" type="button" class="bg-black hover:bg-slate-900 text-amber-300 px-3 py-1.5 font-mono font-bold text-xs border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center space-x-1 active:translate-x-0.5 active:translate-y-0.5">
+                            <span>LOAD</span>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Input Action Form & Anchor Checkbox -->
